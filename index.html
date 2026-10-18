@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Online Invoice Generator & Digital Signature Maker | FreeInvoice.store</title>
+  <meta name="description" content="Create, sign, download, and print clean A4 invoices online for free. Includes digital signature pad, multi-currency billing, and automatic tax calculation.">
+  <meta name="keywords" content="free invoice generator, online invoice maker, billing software free, digital signature maker, pdf invoice generator, freelance invoice template, freeinvoice.store">
+  <meta name="author" content="Muhammad Rameez Tariq">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://freeinvoice.store/">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Online Invoice Generator & Digital Signature Maker | FreeInvoice.store">
+  <meta property="og:description" content="Create, sign, download, and print clean A4 invoices online for free. Includes digital signature pad, multi-currency billing, and automatic tax calculation.">
+  <meta property="og:url" content="https://freeinvoice.store/">
+  <meta property="og:site_name" content="FreeInvoice.store">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <style>
+    .sig-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-left: 4px solid var(--brand);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin-bottom: 22px;
+    }
+    .sig-layout {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      align-items: center;
+    }
+    .sig-canvas {
+      border: 1.5px dashed #94a3b8;
+      border-radius: var(--radius-sm);
+      background: #fafafa;
+      cursor: crosshair;
+      touch-action: none;
+      width: 360px;
+      height: 125px;
+      max-width: 100%;
+      display: block;
+    }
+
+    .invoice-workspace {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 22px;
+      align-items: start;
+      margin-bottom: 26px;
+    }
+
+    .item-row {
+      display: grid;
+      grid-template-columns: 2.2fr 0.75fr 1fr auto;
+      gap: 8px;
+      align-items: end;
+      margin-bottom: 10px;
+      background: var(--slate-50);
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--slate-200);
+    }
+    .item-row .mini-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--slate-500);
+      margin-bottom: 3px;
+    }
+
+    .preview-container {
+      background: #e2e8f0;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid #cbd5e1;
+    }
+
+    .invoice-paper {
+      background: #ffffff;
+      color: #0f172a;
+      width: 100%;
+      max-width: 760px;
+      min-height: 880px;
+      padding: 38px;
+      margin: 0 auto;
+      border-radius: 2px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    .inv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #0f766e;
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+      gap: 16px;
+    }
+    .inv-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 1.5px;
+      line-height: 1;
+    }
+    .inv-meta-grid {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 22px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .inv-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+      font-size: 13.5px;
+    }
+    .inv-table th {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 600;
+    }
+    .inv-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #1e293b;
+    }
+    .inv-footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 28px;
+      gap: 22px;
+    }
+
+    @media (max-width: 992px) {
+      .invoice-workspace, .sig-layout {
+        grid-template-columns: 1fr;
+      }
+      .sig-canvas {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .item-row {
+        grid-template-columns: 1fr 1fr;
+      }
+      .item-row .desc-col {
+        grid-column: 1 / -1;
+      }
+      .preview-container {
+        padding: 10px;
+      }
+      .invoice-paper {
+        padding: 18px 14px;
+        min-height: auto;
+      }
+      .inv-title {
+        font-size: 22px;
+      }
+      .inv-footer-grid {
+        flex-direction: column;
+      }
+      .inv-footer-col {
+        width: 100% !important;
+      }
+      .inv-table th, .inv-table td {
+        padding: 8px 6px;
+        font-size: 12.5px;
+      }
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0mm;
+    }
+    @media print {
+      html, body {
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .no-print, .site-header, .page-header, .ad-slot, .sig-card, .editor-card, .seo-article, .tools-hub, .site-footer, .sticky-ad, #globalToast {
+        display: none !important;
+      }
+      main.container, .invoice-workspace, .preview-container {
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        background: transparent !important;
+        max-width: 100% !important;
+      }
+      .invoice-paper {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 16mm 18mm !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+      }
+    }
+  </style>
+
+  
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="site-header no-print">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><rect width="48" height="48" rx="10" fill="#0f766e"/><path d="M14 12h14l6 6v18a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="#ffffff"/><path d="M28 12v6h6" stroke="#0f766e" stroke-width="2" stroke-linejoin="round"/><line x1="17" y1="22" x2="27" y2="22" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="27" x2="30" y2="27" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="32" x2="23" y2="32" stroke="#0d9488" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <span>FreeInvoice<span class="tld">.store</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Invoice Maker</a>
+        <a href="image-reducer.html" class="nav-link">Image Reducer</a>
+        <a href="word-counter.html" class="nav-link">Word Counter</a>
+        <a href="age-calculator.html" class="nav-link">Age Calculator</a>
+        <a href="percentage-calculator.html" class="nav-link">GST &amp; % Calc</a>
+        <a href="qr-code-generator.html" class="nav-link">QR Generator</a>
+        <a href="password-generator.html" class="nav-link">Passwords</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener" class="nav-link blog-link">Blog &#8599;</a>
+      </nav>
+
+      <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div id="mobileNav" class="mobile-nav">
+      <a href="index.html" class="nav-link active">Invoice Generator</a>
+      <a href="image-reducer.html" class="nav-link">Image Reducer (KB)</a>
+      <a href="word-counter.html" class="nav-link">Word Counter</a>
+      <a href="age-calculator.html" class="nav-link">Age Calculator</a>
+      <a href="percentage-calculator.html" class="nav-link">GST &amp; % Calculator</a>
+      <a href="qr-code-generator.html" class="nav-link">QR Code Maker</a>
+      <a href="password-generator.html" class="nav-link">Password Generator</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+      <a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener" class="nav-link blog-link">Official Blog &#8599;</a>
+    </div>
+  </header>
+
+  <!-- Clean Page Header -->
+  <section class="page-header no-print">
+    <div class="container page-header-inner">
+      <span class="eyebrow">Free Client-Side Billing Tool</span>
+      <h1>Free Online Invoice Generator & Signature Maker</h1>
+      <p>Create, sign, and download clean A4 PDF invoices in seconds. Processed 100% locally in your browser with zero watermarks or site headers.</p>
+    </div>
+  </section>
+
+  <!-- Top AdSense Slot -->
+  <div class="container no-print">
+    <div class="ad-slot" aria-label="Advertisement">
+      <span>Advertisement — Responsive Leaderboard (728x90)</span>
+    </div>
+  </div>
+
+  <!-- Main Workspace -->
+  <main class="container">
+    
+  <!-- Digital Signature Pad -->
+  <div class="sig-card no-print">
+    <div style="margin-bottom:10px;">
+      <h2 style="margin:0 0 4px;font-size:16.5px;font-weight:700;color:var(--slate-900);">Digital Signature Pad</h2>
+      <p style="margin:0;font-size:13.5px;color:var(--slate-600);">Draw your signature below with your mouse or touchscreen. Click <strong>Apply Signature to Invoice</strong> to add it to your bill, or download it as a PNG image.</p>
+    </div>
+    <div class="sig-layout">
+      <canvas id="sig-canvas" class="sig-canvas" width="360" height="125"></canvas>
+      <div style="display:flex;flex-direction:column;gap:8px;max-width:320px;">
+        <button type="button" class="btn btn-primary" onclick="applySignatureToInvoice()">Apply Signature to Invoice</button>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <button type="button" class="btn btn-outline" onclick="clearSignature()">Clear Pad</button>
+          <button type="button" class="btn btn-outline" onclick="downloadSignature()">Download PNG</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Editor + Live Preview -->
+  <div class="invoice-workspace">
+    <!-- Left Editor Form -->
+    <div class="card editor-card no-print" style="margin-bottom:0;">
+      <div class="card-header">
+        <h2 class="card-title">Invoice Details</h2>
+        <button type="button" class="btn btn-outline" style="padding:5px 10px;font-size:12.5px;" onclick="resetInvoiceForm()">Reset Sample</button>
+      </div>
+
+      <div class="grid-2" style="gap:12px;">
+        <div class="form-group">
+          <label class="form-label" for="input-logo">Company Logo (Optional)</label>
+          <input type="file" id="input-logo" class="form-control" accept="image/*" onchange="uploadImage(event, 'prev-logo')">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="input-curr">Currency</label>
+          <select id="input-curr" class="form-control" onchange="updatePreview()">
+            <option value="$">USD ($)</option>
+            <option value="Rs ">PKR (Rs)</option>
+            <option value="€">EUR (€)</option>
+            <option value="£">GBP (£)</option>
+            <option value="AED ">AED (د.إ)</option>
+            <option value="₹">INR (₹)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid-2" style="gap:12px;">
+        <div class="form-group">
+          <label class="form-label" for="input-from">From (Your Name / Company)</label>
+          <textarea id="input-from" class="form-control" rows="3" oninput="updatePreview()">Muhammad Rameez Tariq
+Web & Software Solutions
+Lahore, Pakistan</textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="input-to">Bill To (Client Name &amp; Address)</label>
+          <textarea id="input-to" class="form-control" rows="3" oninput="updatePreview()">Ali Co. Enterprises
+Gulberg III, Lahore</textarea>
+        </div>
+      </div>
+
+      <div class="grid-3" style="gap:10px;">
+        <div class="form-group">
+          <label class="form-label" for="input-inv">Invoice Number</label>
+          <input type="text" id="input-inv" class="form-control" value="INV-001" oninput="updatePreview()">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="input-date">Issue Date</label>
+          <input type="date" id="input-date" class="form-control" oninput="updatePreview()">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="input-due">Due Date</label>
+          <input type="date" id="input-due" class="form-control" oninput="updatePreview()">
+        </div>
+      </div>
+
+      <!-- Line Items Section -->
+      <div style="margin:16px 0;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <label class="form-label" style="margin:0;">Invoice Line Items</label>
+          <a href="percentage-calculator.html" style="font-size:12px;font-weight:600;">GST / Discount Calculator &rarr;</a>
+        </div>
+        <div id="items-wrapper"></div>
+        <button type="button" class="btn btn-outline btn-block" style="margin-top:6px;" onclick="addItem()">+ Add Line Item</button>
+      </div>
+
+      <div class="grid-2" style="gap:12px;">
+        <div class="form-group">
+          <label class="form-label" for="input-tax">Tax (%)</label>
+          <input type="number" id="input-tax" class="form-control" value="0" min="0" step="0.1" oninput="updatePreview()">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="input-disc">Discount (%)</label>
+          <input type="number" id="input-disc" class="form-control" value="0" min="0" step="0.1" oninput="updatePreview()">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="input-bank">Bank / Payment Details &amp; Notes</label>
+        <textarea id="input-bank" class="form-control" rows="3" placeholder="Bank Name: Meezan Bank&#10;Account No: 123456789&#10;IBAN: PK..." oninput="updatePreview()">Bank Name: Meezan Bank
+Account Title: Muhammad Rameez Tariq
+Payment Terms: Due within 7 days. Thank you for your business!</textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="input-sign">Or Upload Existing Signature Image (Optional)</label>
+        <input type="file" id="input-sign" class="form-control" accept="image/*" onchange="uploadImage(event, 'prev-sign')">
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="grid-2" style="gap:10px;margin-top:18px;">
+        <button type="button" id="pdfDownloadBtn" class="btn btn-primary" style="padding:13px;" onclick="downloadPDF()">Download Invoice (PDF)</button>
+        <button type="button" class="btn btn-dark" style="padding:13px;" onclick="printInvoice()">Print Clean Invoice</button>
+      </div>
+    </div>
+
+    <!-- Right Live Invoice Paper Preview -->
+    <div class="preview-container">
+      <div class="invoice-paper" id="invoice-preview">
+        <div class="inv-header">
+          <div>
+            <img id="prev-logo" style="max-height:64px;display:none;margin-bottom:10px;" alt="Company Logo">
+            <div id="prev-from" style="font-weight:700;font-size:16px;white-space:pre-line;line-height:1.45;color:#0f172a;">Muhammad Rameez Tariq</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="inv-title">INVOICE</div>
+            <div style="color:#0f766e;font-weight:700;font-size:15px;margin-top:6px;" id="prev-inv">INV-001</div>
+          </div>
+        </div>
+
+        <div class="inv-meta-grid">
+          <div>
+            <div style="font-size:11.5px;text-transform:uppercase;letter-spacing:0.8px;color:#64748b;font-weight:700;margin-bottom:4px;">Bill To:</div>
+            <div id="prev-to" style="font-size:15px;white-space:pre-line;color:#1e293b;font-weight:600;line-height:1.45;">Ali Co. Enterprises</div>
+          </div>
+          <div style="text-align:right;font-size:13.5px;line-height:1.75;color:#334155;">
+            <div><strong style="color:#64748b;">Issue Date:</strong> <span id="prev-date" style="font-weight:600;color:#0f172a;"></span></div>
+            <div><strong style="color:#64748b;">Due Date:</strong> <span id="prev-due" style="font-weight:600;color:#0f172a;"></span></div>
+          </div>
+        </div>
+
+        <table class="inv-table">
+          <thead>
+            <tr>
+              <th>Item Description</th>
+              <th style="text-align:center;width:70px;">Qty</th>
+              <th style="text-align:right;width:110px;">Rate</th>
+              <th style="text-align:right;width:120px;">Amount</th>
+            </tr>
+          </thead>
+          <tbody id="prev-items-body"></tbody>
+        </table>
+
+        <div class="inv-footer-grid">
+          <div class="inv-footer-col" style="width:52%;">
+            <div style="font-size:12.5px;font-weight:700;text-transform:uppercase;color:#0f172a;margin-bottom:6px;">Payment Details &amp; Notes:</div>
+            <div id="prev-bank" style="white-space:pre-line;font-size:13px;color:#475569;line-height:1.6;background:#f8fafc;padding:12px;border-radius:4px;border-left:3px solid #0f766e;"></div>
+          </div>
+
+          <div class="inv-footer-col" style="width:42%;">
+            <div style="font-size:14px;">
+              <div style="display:flex;justify-content:space-between;padding:5px 0;color:#475569;">
+                <span>Subtotal:</span>
+                <span id="prev-subtotal" style="font-weight:600;color:#0f172a;">$0.00</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:5px 0;color:#475569;">
+                <span>Discount (<span id="prev-disc-lbl">0</span>%):</span>
+                <span id="prev-disc-amt" style="color:#0f766e;font-weight:600;">-$0.00</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:5px 0;color:#475569;">
+                <span>Tax (<span id="prev-tax-lbl">0</span>%):</span>
+                <span id="prev-tax-amt" style="font-weight:600;color:#0f172a;">$0.00</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:10px 0;margin-top:6px;border-top:2px solid #0f172a;font-size:17px;font-weight:800;color:#0f172a;">
+                <span>Total:</span>
+                <span id="prev-total" style="color:#0f766e;">$0.00</span>
+              </div>
+            </div>
+
+            <div style="margin-top:38px;text-align:center;">
+              <img id="prev-sign" style="max-height:58px;display:none;margin:0 auto 6px auto;" alt="Authorized Signature">
+              <div style="border-top:1px solid #334155;display:inline-block;padding-top:5px;width:165px;font-size:12.5px;font-weight:600;color:#475569;">Authorized Signature</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ad-slot no-print">
+    <span>Advertisement — In-Content Banner</span>
+  </div>
+
+  <!-- Comprehensive SEO Guide -->
+  <article class="seo-article no-print">
+    <h2>How to Create a Professional Business Invoice Online for Free</h2>
+    <p>Welcome to <strong>FreeInvoice.store</strong>, a fast, browser-based <strong>free invoice generator</strong> developed by <strong>Muhammad Rameez Tariq</strong>. Whether you are a freelance software engineer, graphic designer, digital agency, or small business owner, sending an accurate, well-formatted invoice helps you get paid faster and keeps your bookkeeping organized.</p>
+
+    <div class="highlight-box">
+      <h4>100% Client-Side Privacy (Zero Server Uploads)</h4>
+      <p style="margin:0;">Unlike cloud accounting platforms that save your client records and bank account IBANs on remote servers, FreeInvoice.store processes your entire invoice locally inside your browser. Your financial figures, company logo, and digital signature never leave your device.</p>
+    </div>
+
+    <h3>Step-by-Step Guide: Creating &amp; Downloading Your PDF Invoice</h3>
+    <ol>
+      <li><strong>Add Your Company Logo:</strong> Upload your business logo in PNG or JPG format. If your logo file is too heavy, you can compress it down to 50KB first using our <a href="image-reducer.html"><strong>Free Image Reducer &amp; Resizer</strong></a>.</li>
+      <li><strong>Select Currency &amp; Dates:</strong> Pick USD ($), PKR (Rs), EUR (€), GBP (£), AED, or INR and set your Invoice Number, Issue Date, and Due Date.</li>
+      <li><strong>List Line Items:</strong> Add each service or product with its quantity and unit rate. Need to check character length for detailed project notes? Try our <a href="word-counter.html"><strong>Online Word Counter</strong></a>, or calculate inclusive/exclusive sales tax on our <a href="percentage-calculator.html"><strong>GST &amp; Percentage Calculator</strong></a>.</li>
+      <li><strong>Sign &amp; Export:</strong> Draw your signature on the pad above, click <strong>Apply Signature to Invoice</strong>, and hit <strong>Download Invoice (PDF)</strong> or <strong>Print Clean Invoice</strong>.</li>
+    </ol>
+
+    <h3>What Every Legal Commercial Invoice Should Include</h3>
+    <ul>
+      <li><strong>Unique Invoice Identifier:</strong> Use sequential numbering (such as <code>INV-001</code>, <code>INV-002</code>) for clean tax filing.</li>
+      <li><strong>Clear Sender &amp; Client Details:</strong> Include full business names, physical addresses, and contact details for both parties.</li>
+      <li><strong>Itemized Services:</strong> Break down deliverables clearly so your client understands exactly what they are paying for.</li>
+      <li><strong>Payment Terms &amp; Bank Details:</strong> Specify your Bank Name, Account Title, and IBAN, or include a payment QR code created with our <a href="qr-code-generator.html"><strong>Free QR Code Generator</strong></a>.</li>
+    </ul>
+
+    <h3>Frequently Asked Questions (FAQs)</h3>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h4>1. Does the printed or downloaded PDF invoice have any website watermark or header?</h4>
+        <p>No. Both our PDF export and Print mode isolate only your invoice sheet and suppress browser headers so your client sees only your company branding.</p>
+      </div>
+      <div class="faq-item">
+        <h4>2. Can I generate and download invoices on my Android or iPhone?</h4>
+        <p>Yes! The editor and live preview are mobile-responsive, and our native A4 PDF engine generates a full-resolution A4 invoice on any smartphone without blank pages.</p>
+      </div>
+      <div class="faq-item">
+        <h4>3. Is FreeInvoice.store completely free for commercial use?</h4>
+        <p>Yes, you can generate and download unlimited invoices without sign-ups, subscriptions, or hidden charges.</p>
+      </div>
+    </div>
+  </article>
+
+  <script>
+    // === SIGNATURE PAD LOGIC ===
+    const canvas = document.getElementById('sig-canvas');
+    const ctx = canvas.getContext('2d');
+    let isDrawing = false;
+
+    ctx.strokeStyle = '#0f172a';
+    ctx.lineWidth = 2.2;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+
+    function getPos(e) {
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      return {
+        x: (clientX - rect.left) * scaleX,
+        y: (clientY - rect.top) * scaleY
+      };
+    }
+
+    canvas.addEventListener('mousedown', (e) => { isDrawing = true; const p = getPos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); });
+    canvas.addEventListener('mousemove', (e) => {
+      if (!isDrawing) return;
+      const p = getPos(e);
+      ctx.lineTo(p.x, p.y);
+      ctx.stroke();
+    });
+    canvas.addEventListener('mouseup', () => { isDrawing = false; ctx.beginPath(); });
+    canvas.addEventListener('mouseout', () => { isDrawing = false; ctx.beginPath(); });
+
+    canvas.addEventListener('touchstart', (e) => { isDrawing = true; const p = getPos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); e.preventDefault(); }, {passive: false});
+    canvas.addEventListener('touchmove', (e) => {
+      if (!isDrawing) return;
+      const p = getPos(e);
+      ctx.lineTo(p.x, p.y);
+      ctx.stroke();
+      e.preventDefault();
+    }, {passive: false});
+    canvas.addEventListener('touchend', () => { isDrawing = false; ctx.beginPath(); });
+
+    function clearSignature() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      showToast('Signature pad cleared.');
+    }
+
+    function downloadSignature() {
+      const link = document.createElement('a');
+      link.download = 'signature.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+      showToast('Signature PNG downloaded.');
+    }
+
+    function applySignatureToInvoice() {
+      const dataURL = canvas.toDataURL('image/png');
+      const imgElement = document.getElementById('prev-sign');
+      imgElement.src = dataURL;
+      imgElement.style.display = 'block';
+      showToast('Signature added to invoice.');
+    }
+
+    // === INVOICE GENERATOR LOGIC ===
+    const today = new Date();
+    const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+    document.getElementById('input-date').valueAsDate = today;
+    document.getElementById('input-due').valueAsDate = nextWeek;
+
+    function uploadImage(event, targetId) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const imgElement = document.getElementById(targetId);
+          imgElement.src = e.target.result;
+          imgElement.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function addItem(desc = '', qty = 1, rate = 0) {
+      const wrapper = document.getElementById('items-wrapper');
+      const row = document.createElement('div');
+      row.className = 'item-row';
+      row.innerHTML = `
+        <div class="desc-col">
+          <span class="mini-label">Description</span>
+          <input type="text" class="form-control item-desc" placeholder="Service or product" value="${desc}" oninput="updatePreview()">
+        </div>
+        <div>
+          <span class="mini-label">Qty</span>
+          <input type="number" class="form-control item-qty" value="${qty}" min="1" oninput="updatePreview()">
+        </div>
+        <div>
+          <span class="mini-label">Rate</span>
+          <input type="number" class="form-control item-rate" value="${rate}" min="0" step="0.01" oninput="updatePreview()">
+        </div>
+        <div>
+          <button type="button" class="btn btn-danger" style="padding:9px 12px;" onclick="this.closest('.item-row').remove(); updatePreview();" title="Remove">&times;</button>
+        </div>
+      `;
+      wrapper.appendChild(row);
+      updatePreview();
+    }
+
+    function updatePreview() {
+      const curr = document.getElementById('input-curr').value;
+      document.getElementById('prev-from').innerText = document.getElementById('input-from').value;
+      document.getElementById('prev-to').innerText = document.getElementById('input-to').value;
+      document.getElementById('prev-inv').innerText = document.getElementById('input-inv').value;
+      document.getElementById('prev-bank').innerText = document.getElementById('input-bank').value;
+
+      const dateVal = document.getElementById('input-date').value;
+      const dueVal = document.getElementById('input-due').value;
+      if (dateVal) {
+        document.getElementById('prev-date').innerText = new Date(dateVal + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+      }
+      if (dueVal) {
+        document.getElementById('prev-due').innerText = new Date(dueVal + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+      }
+
+      const itemRows = document.querySelectorAll('.item-row');
+      const tbody = document.getElementById('prev-items-body');
+      tbody.innerHTML = '';
+      let subtotal = 0;
+
+      itemRows.forEach(row => {
+        const desc = row.querySelector('.item-desc').value;
+        const qty = parseFloat(row.querySelector('.item-qty').value) || 0;
+        const rate = parseFloat(row.querySelector('.item-rate').value) || 0;
+        const amount = qty * rate;
+        subtotal += amount;
+
+        if (desc || amount > 0) {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td style="font-weight:500;">${desc || 'Item'}</td>
+            <td style="text-align:center;">${qty}</td>
+            <td style="text-align:right;">${curr}${rate.toFixed(2)}</td>
+            <td style="text-align:right;font-weight:700;">${curr}${amount.toFixed(2)}</td>
+          `;
+          tbody.appendChild(tr);
+        }
+      });
+
+      const discPercent = parseFloat(document.getElementById('input-disc').value) || 0;
+      const discAmount = (subtotal * discPercent) / 100;
+      const afterDisc = Math.max(0, subtotal - discAmount);
+
+      const taxPercent = parseFloat(document.getElementById('input-tax').value) || 0;
+      const taxAmount = (afterDisc * taxPercent) / 100;
+      const grandTotal = afterDisc + taxAmount;
+
+      document.getElementById('prev-subtotal').innerText = `${curr}${subtotal.toFixed(2)}`;
+      document.getElementById('prev-disc-lbl').innerText = discPercent;
+      document.getElementById('prev-disc-amt').innerText = `-${curr}${discAmount.toFixed(2)}`;
+      document.getElementById('prev-tax-lbl').innerText = taxPercent;
+      document.getElementById('prev-tax-amt').innerText = `${curr}${taxAmount.toFixed(2)}`;
+      document.getElementById('prev-total').innerText = `${curr}${grandTotal.toFixed(2)}`;
+    }
+
+    function resetInvoiceForm() {
+      document.getElementById('items-wrapper').innerHTML = '';
+      addItem('Web Application Development', 1, 500);
+      addItem('UI/UX Design & Responsive Setup', 1, 150);
+      showToast('Sample invoice restored.');
+    }
+
+    // =========================================================================
+    // NATIVE A4 CANVAS-TO-PDF ENGINE (ZERO WHITE PAGE BUG ON MOBILE OR DESKTOP)
+    // =========================================================================
+    function renderInvoiceToA4Canvas() {
+      const W = 1654;
+      const H = 2339;
+      const c = document.createElement('canvas');
+      c.width = W;
+      c.height = H;
+      const g = c.getContext('2d');
+
+      // 1. Pure White A4 Paper Background
+      g.fillStyle = '#ffffff';
+      g.fillRect(0, 0, W, H);
+
+      const pad = 110;
+      let y = pad;
+
+      // 2. Logo (if uploaded) & Sender Info (Left)
+      const logoImg = document.getElementById('prev-logo');
+      if (logoImg && logoImg.style.display !== 'none' && logoImg.src && logoImg.naturalWidth > 0) {
+        const maxH = 110;
+        const ratio = logoImg.naturalWidth / logoImg.naturalHeight;
+        const drawW = Math.min(340, maxH * ratio);
+        g.drawImage(logoImg, pad, y, drawW, maxH);
+        y += maxH + 22;
+      }
+
+      // INVOICE Heading & Invoice Number (Right)
+      g.fillStyle = '#0f172a';
+      g.font = '800 58px Inter, Arial, sans-serif';
+      g.textAlign = 'right';
+      g.fillText('INVOICE', W - pad, pad + 52);
+
+      const invNum = document.getElementById('input-inv').value || 'INV-001';
+      g.fillStyle = '#0f766e';
+      g.font = '700 30px Inter, Arial, sans-serif';
+      g.fillText(invNum, W - pad, pad + 98);
+
+      // Sender lines (Left)
+      g.textAlign = 'left';
+      const fromLines = (document.getElementById('input-from').value || '').split('\n');
+      fromLines.forEach((line, idx) => {
+        if (idx === 0) {
+          g.font = '700 31px Inter, Arial, sans-serif';
+          g.fillStyle = '#0f172a';
+        } else {
+          g.font = '500 25px Inter, Arial, sans-serif';
+          g.fillStyle = '#334155';
+        }
+        g.fillText(line, pad, y + 30);
+        y += 38;
+      });
+
+      y = Math.max(y + 24, pad + 140);
+
+      // Header Teal Divider Line
+      g.strokeStyle = '#0f766e';
+      g.lineWidth = 4;
+      g.beginPath();
+      g.moveTo(pad, y);
+      g.lineTo(W - pad, y);
+      g.stroke();
+
+      y += 50;
+
+      // 3. Bill To (Left) & Dates (Right)
+      const metaStartY = y;
+      g.fillStyle = '#64748b';
+      g.font = '700 22px Inter, Arial, sans-serif';
+      g.textAlign = 'left';
+      g.fillText('BILL TO:', pad, y);
+      y += 36;
+
+      const toLines = (document.getElementById('input-to').value || '').split('\n');
+      toLines.forEach((line, idx) => {
+        g.font = idx === 0 ? '700 29px Inter, Arial, sans-serif' : '500 25px Inter, Arial, sans-serif';
+        g.fillStyle = idx === 0 ? '#0f172a' : '#334155';
+        g.fillText(line, pad, y);
+        y += 36;
+      });
+
+      // Issue Date & Due Date on Right
+      const issueTxt = document.getElementById('prev-date').innerText || '';
+      const dueTxt = document.getElementById('prev-due').innerText || '';
+      g.textAlign = 'right';
+      g.font = '600 25px Inter, Arial, sans-serif';
+      g.fillStyle = '#475569';
+      g.fillText('Issue Date:  ' + issueTxt, W - pad, metaStartY + 10);
+      g.fillText('Due Date:  ' + dueTxt, W - pad, metaStartY + 50);
+
+      y = Math.max(y + 36, metaStartY + 110);
+
+      // 4. Line Items Table Header
+      const tableW = W - pad * 2;
+      const colQtyX = pad + tableW * 0.58;
+      const colRateX = pad + tableW * 0.78;
+      const colAmtX = W - pad - 24;
+
+      g.fillStyle = '#0f172a';
+      g.fillRect(pad, y, tableW, 64);
+
+      g.fillStyle = '#ffffff';
+      g.font = '700 25px Inter, Arial, sans-serif';
+      g.textAlign = 'left';
+      g.fillText('Item Description', pad + 24, y + 41);
+      g.textAlign = 'center';
+      g.fillText('Qty', colQtyX, y + 41);
+      g.textAlign = 'right';
+      g.fillText('Rate', colRateX, y + 41);
+      g.fillText('Amount', colAmtX, y + 41);
+
+      y += 64;
+
+      // Table Rows
+      const curr = document.getElementById('input-curr').value;
+      const itemRows = document.querySelectorAll('.item-row');
+      let subtotal = 0;
+
+      itemRows.forEach((row) => {
+        const desc = row.querySelector('.item-desc').value || 'Item';
+        const qty = parseFloat(row.querySelector('.item-qty').value) || 0;
+        const rate = parseFloat(row.querySelector('.item-rate').value) || 0;
+        const amount = qty * rate;
+        subtotal += amount;
+
+        const rowH = 66;
+        g.fillStyle = '#1e293b';
+        g.font = '500 25px Inter, Arial, sans-serif';
+        g.textAlign = 'left';
+        g.fillText(desc.substring(0, 52), pad + 24, y + 42);
+
+        g.textAlign = 'center';
+        g.fillText(String(qty), colQtyX, y + 42);
+
+        g.textAlign = 'right';
+        g.fillText(curr + rate.toFixed(2), colRateX, y + 42);
+
+        g.font = '700 25px Inter, Arial, sans-serif';
+        g.fillText(curr + amount.toFixed(2), colAmtX, y + 42);
+
+        g.strokeStyle = '#e2e8f0';
+        g.lineWidth = 2;
+        g.beginPath();
+        g.moveTo(pad, y + rowH);
+        g.lineTo(W - pad, y + rowH);
+        g.stroke();
+
+        y += rowH;
+      });
+
+      y += 60;
+      const footerTopY = y;
+
+      // 5. Left Column: Payment Details & Notes
+      const bankText = document.getElementById('input-bank').value || '';
+      if (bankText.trim()) {
+        g.textAlign = 'left';
+        g.fillStyle = '#0f172a';
+        g.font = '700 24px Inter, Arial, sans-serif';
+        g.fillText('PAYMENT DETAILS & NOTES:', pad, y);
+
+        g.font = '500 22px Inter, Arial, sans-serif';
+        const maxBoxW = tableW * 0.48 - 40;
+        const wrappedBankLines = [];
+        bankText.split('\n').forEach((rawLine) => {
+          const words = rawLine.split(' ');
+          let currLine = '';
+          words.forEach((w) => {
+            const testLine = currLine ? currLine + ' ' + w : w;
+            if (g.measureText(testLine).width > maxBoxW && currLine) {
+              wrappedBankLines.push(currLine);
+              currLine = w;
+            } else {
+              currLine = testLine;
+            }
+          });
+          wrappedBankLines.push(currLine);
+        });
+
+        const boxH = Math.max(120, wrappedBankLines.length * 34 + 36);
+        g.fillStyle = '#f8fafc';
+        g.fillRect(pad, y + 18, tableW * 0.48, boxH);
+        g.fillStyle = '#0f766e';
+        g.fillRect(pad, y + 18, 6, boxH);
+
+        g.fillStyle = '#475569';
+        let by = y + 52;
+        wrappedBankLines.forEach((bline) => {
+          g.fillText(bline, pad + 24, by);
+          by += 34;
+        });
+      }
+
+      // 6. Right Column: Totals & Signature
+      const discPercent = parseFloat(document.getElementById('input-disc').value) || 0;
+      const discAmount = (subtotal * discPercent) / 100;
+      const afterDisc = Math.max(0, subtotal - discAmount);
+      const taxPercent = parseFloat(document.getElementById('input-tax').value) || 0;
+      const taxAmount = (afterDisc * taxPercent) / 100;
+      const grandTotal = afterDisc + taxAmount;
+
+      const rightColLeft = pad + tableW * 0.58;
+      let ty = footerTopY;
+
+      function drawTotalLine(label, val, isBold, color) {
+        g.textAlign = 'left';
+        g.font = isBold ? '800 32px Inter, Arial, sans-serif' : '500 26px Inter, Arial, sans-serif';
+        g.fillStyle = isBold ? '#0f172a' : '#475569';
+        g.fillText(label, rightColLeft, ty);
+
+        g.textAlign = 'right';
+        g.fillStyle = color || (isBold ? '#0f766e' : '#0f172a');
+        g.font = isBold ? '800 34px Inter, Arial, sans-serif' : '600 26px Inter, Arial, sans-serif';
+        g.fillText(val, W - pad, ty);
+        ty += 46;
+      }
+
+      drawTotalLine('Subtotal:', curr + subtotal.toFixed(2), false);
+      drawTotalLine('Discount (' + discPercent + '%):', '-' + curr + discAmount.toFixed(2), false, '#0f766e');
+      drawTotalLine('Tax (' + taxPercent + '%):', curr + taxAmount.toFixed(2), false);
+
+      g.strokeStyle = '#0f172a';
+      g.lineWidth = 3;
+      g.beginPath();
+      g.moveTo(rightColLeft, ty - 22);
+      g.lineTo(W - pad, ty - 22);
+      g.stroke();
+      ty += 16;
+
+      drawTotalLine('Total:', curr + grandTotal.toFixed(2), true, '#0f766e');
+
+      // Authorized Signature Image & Line
+      ty += 85;
+      const signImg = document.getElementById('prev-sign');
+      const sigCenterX = rightColLeft + (W - pad - rightColLeft) / 2;
+      if (signImg && signImg.style.display !== 'none' && signImg.src && signImg.naturalWidth > 0) {
+        const sH = 95;
+        const sW = Math.min(300, (signImg.naturalWidth / signImg.naturalHeight) * sH);
+        g.drawImage(signImg, sigCenterX - sW / 2, ty - sH - 10, sW, sH);
+      }
+
+      g.strokeStyle = '#334155';
+      g.lineWidth = 2;
+      g.beginPath();
+      g.moveTo(sigCenterX - 160, ty);
+      g.lineTo(sigCenterX + 160, ty);
+      g.stroke();
+
+      g.textAlign = 'center';
+      g.fillStyle = '#475569';
+      g.font = '600 23px Inter, Arial, sans-serif';
+      g.fillText('Authorized Signature', sigCenterX, ty + 34);
+
+      return c;
+    }
+
+    // Converts a JPEG DataURL directly into a valid single-page A4 PDF binary Blob
+    function jpegDataUrlToPdfBlob(jpegDataUrl, imgW, imgH) {
+      const base64 = jpegDataUrl.split(',')[1];
+      const raw = atob(base64);
+      const imgBytes = new Uint8Array(raw.length);
+      for (let i = 0; i < raw.length; i++) {
+        imgBytes[i] = raw.charCodeAt(i);
+      }
+
+      const pageW = 595.28;
+      const pageH = 841.89;
+      const contentStream = 'q\n' + pageW + ' 0 0 ' + pageH + ' 0 0 cm\n/Im0 Do\nQ\n';
+
+      const encoder = new TextEncoder();
+      const chunks = [];
+      const offsets = [];
+      let currentOffset = 0;
+
+      function pushStr(s) {
+        const b = encoder.encode(s);
+        chunks.push(b);
+        currentOffset += b.length;
+      }
+      function pushBytes(b) {
+        chunks.push(b);
+        currentOffset += b.length;
+      }
+      function startObj(id) {
+        offsets[id] = currentOffset;
+        pushStr(id + ' 0 obj\n');
+      }
+
+      pushStr('%PDF-1.4\n');
+
+      startObj(1);
+      pushStr('<< /Type /Catalog /Pages 2 0 R >>\nendobj\n');
+
+      startObj(2);
+      pushStr('<< /Type /Pages /Kids [3 0 R] /Count 1 >>\nendobj\n');
+
+      startObj(3);
+      pushStr('<< /Type /Page /Parent 2 0 R /Resources << /XObject << /Im0 4 0 R >> >> /MediaBox [0 0 ' + pageW + ' ' + pageH + '] /Contents 5 0 R >>\nendobj\n');
+
+      startObj(4);
+      pushStr('<< /Type /XObject /Subtype /Image /Width ' + imgW + ' /Height ' + imgH + ' /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ' + imgBytes.length + ' >>\nstream\n');
+      pushBytes(imgBytes);
+      pushStr('\nendstream\nendobj\n');
+
+      startObj(5);
+      pushStr('<< /Length ' + contentStream.length + ' >>\nstream\n' + contentStream + 'endstream\nendobj\n');
+
+      const xrefOffset = currentOffset;
+      pushStr('xref\n0 6\n0000000000 65535 f \n');
+      for (let i = 1; i <= 5; i++) {
+        const off = String(offsets[i]).padStart(10, '0');
+        pushStr(off + ' 00000 n \n');
+      }
+      pushStr('trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n' + xrefOffset + '\n%%EOF');
+
+      return new Blob(chunks, { type: 'application/pdf' });
+    }
+
+    function downloadPDF() {
+      const btn = document.getElementById('pdfDownloadBtn');
+      const origText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Generating PDF...';
+
+      try {
+        const a4Canvas = renderInvoiceToA4Canvas();
+        const jpegUrl = a4Canvas.toDataURL('image/jpeg', 0.95);
+        const pdfBlob = jpegDataUrlToPdfBlob(jpegUrl, a4Canvas.width, a4Canvas.height);
+
+        const invNum = (document.getElementById('input-inv').value || '001').replace(/[^a-zA-Z0-9-_]/g, '_');
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(pdfBlob);
+        link.download = 'Invoice_' + invNum + '.pdf';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+
+        showToast('Invoice PDF downloaded!');
+      } catch (err) {
+        console.error(err);
+        printInvoice();
+      } finally {
+        btn.disabled = false;
+        btn.textContent = origText;
+      }
+    }
+
+    // =========================================================================
+    // ISOLATED CLEAN PRINT ENGINE (ZERO WEBSITE TITLE OR URL HEADER AT TOP)
+    // =========================================================================
+    function printInvoice() {
+      const a4Canvas = renderInvoiceToA4Canvas();
+      const dataUrl = a4Canvas.toDataURL('image/png');
+
+      let printFrame = document.getElementById('cleanPrintFrame');
+      if (printFrame) printFrame.remove();
+
+      printFrame = document.createElement('iframe');
+      printFrame.id = 'cleanPrintFrame';
+      printFrame.style.cssText = 'position:fixed;right:0;bottom:0;width:0;height:0;border:0;';
+      document.body.appendChild(printFrame);
+
+      const frameDoc = printFrame.contentWindow.document;
+      frameDoc.open();
+      frameDoc.write('<!DOCTYPE html><html><head><title>&nbsp;</title><style>@page { size: A4 portrait; margin: 0mm; } html, body { margin: 0; padding: 0; background: #ffffff; } img { width: 100%; height: auto; display: block; }</style></head><body><img src="' + dataUrl + '" onload="setTimeout(function(){ window.focus(); window.print(); }, 100);" /></body></html>');
+      frameDoc.close();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      addItem('Web Application Development', 1, 500);
+      addItem('UI/UX Design & Responsive Setup', 1, 150);
+    });
+  </script>
+
+    
+    <section class="tools-hub no-print" aria-label="More Browser Utilities">
+      <h2 class="section-title">All Free Tools on FreeInvoice.store</h2>
+      <p class="section-subtitle">Fast, client-side utilities that run directly in your browser without uploading files to any server.</p>
+      <div class="grid-3">
+        <a href="index.html" class="tool-card">
+          <div>
+            <h3>Invoice Generator &amp; Signature Pad</h3>
+            <p>Create, sign, print, and download A4 invoices in USD, PKR, EUR, and GBP with automatic tax and discount calculations.</p>
+          </div>
+          <span class="tool-card-link">Open Invoice Tool &rarr;</span>
+        </a>
+        <a href="image-reducer.html" class="tool-card">
+          <div>
+            <h3>Image Reducer &amp; Resizer (KB)</h3>
+            <p>Compress photos to 50KB or 200KB, resize pixel dimensions, rotate images, or increase file size in JPG, PNG, and WebP.</p>
+          </div>
+          <span class="tool-card-link">Open Image Reducer &rarr;</span>
+        </a>
+        <a href="word-counter.html" class="tool-card">
+          <div>
+            <h3>Word &amp; Character Counter</h3>
+            <p>Count words, characters, sentences, reading time, and live SEO keyword density, or convert text case in one click.</p>
+          </div>
+          <span class="tool-card-link">Open Word Counter &rarr;</span>
+        </a>
+        <a href="age-calculator.html" class="tool-card">
+          <div>
+            <h3>Exact Age Calculator</h3>
+            <p>Calculate exact age in years, months, days, weeks, and hours from your Date of Birth for official forms and exams.</p>
+          </div>
+          <span class="tool-card-link">Open Age Calculator &rarr;</span>
+        </a>
+        <a href="percentage-calculator.html" class="tool-card">
+          <div>
+            <h3>Percentage &amp; GST Calculator</h3>
+            <p>Compute inclusive and exclusive GST/sales tax, retail discounts, exam marks percentages, and percentage change.</p>
+          </div>
+          <span class="tool-card-link">Open Tax &amp; % Calculator &rarr;</span>
+        </a>
+        <a href="qr-code-generator.html" class="tool-card">
+          <div>
+            <h3>QR Code Generator</h3>
+            <p>Create permanent, custom-colored QR codes for website links, Wi-Fi access, WhatsApp, and invoice payments.</p>
+          </div>
+          <span class="tool-card-link">Open QR Generator &rarr;</span>
+        </a>
+        <a href="password-generator.html" class="tool-card">
+          <div>
+            <h3>Secure Password Generator</h3>
+            <p>Generate strong, hardware-random passwords locally in your browser with custom length and entropy scoring.</p>
+          </div>
+          <span class="tool-card-link">Open Password Tool &rarr;</span>
+        </a>
+      </div>
+    </section>
+    
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer no-print">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><rect width="48" height="48" rx="10" fill="#0f766e"/><path d="M14 12h14l6 6v18a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="#ffffff"/><path d="M28 12v6h6" stroke="#0f766e" stroke-width="2" stroke-linejoin="round"/><line x1="17" y1="22" x2="27" y2="22" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="27" x2="30" y2="27" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="32" x2="23" y2="32" stroke="#0d9488" stroke-width="2.2" stroke-linecap="round"/></svg>
+            <span>FreeInvoice.store</span>
+          </div>
+          <p style="font-size:13.5px;line-height:1.65;margin-bottom:14px;">
+            Professional browser-based tools for invoicing, image compression in KB, text analysis, and daily calculations. Built and maintained by <strong>Muhammad Rameez Tariq</strong>.
+          </p>
+          <p style="font-size:13px;color:#cbd5e1;margin:0;">
+            Email: <a href="mailto:gggrameez93@gmail.com" style="color:#5eead4;font-weight:600;">gggrameez93@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Web Utilities</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Invoice Generator</a></li>
+            <li><a href="image-reducer.html">Image Reducer in KB</a></li>
+            <li><a href="word-counter.html">Word Counter</a></li>
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>More Tools</h4>
+          <ul class="footer-links">
+            <li><a href="percentage-calculator.html">GST &amp; % Calculator</a></li>
+            <li><a href="qr-code-generator.html">QR Code Generator</a></li>
+            <li><a href="password-generator.html">Password Generator</a></li>
+            <li><a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener">Official Blog &#8599;</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company &amp; Legal</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us (Muhammad Rameez Tariq)</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 FreeInvoice.store. Developed by <strong>Muhammad Rameez Tariq</strong>. All rights reserved.</div>
+        <div>100% Client-Side Processing &bull; Mobile Ready</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Bottom Anchor Ad -->
+  <div id="stickyAd" class="sticky-ad no-print">
+    <button type="button" class="sticky-ad-close" onclick="closeStickyAd()" aria-label="Close Ad">&times;</button>
+    <div style="font-size:11.5px;color:#94a3b8;font-weight:500;">
+      Advertisement — Sticky Anchor Slot
+    </div>
+  </div>
+
+  <script src="assets/js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Percentage, Discount & GST Calculator Online</title>
+  <meta name="description" content="Calculate percentages, exam marks percentage, retail discounts, and inclusive or exclusive GST/VAT sales tax online for free.">
+  <meta name="keywords" content="percentage calculator, gst calculator online, sales tax calculator, discount calculator, marks percentage calculator">
+  <meta name="author" content="Muhammad Rameez Tariq">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://freeinvoice.store/percentage-calculator.html">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Percentage, Discount & GST Calculator Online">
+  <meta property="og:description" content="Calculate percentages, exam marks percentage, retail discounts, and inclusive or exclusive GST/VAT sales tax online for free.">
+  <meta property="og:url" content="https://freeinvoice.store/percentage-calculator.html">
+  <meta property="og:site_name" content="FreeInvoice.store">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+  
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="site-header no-print">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><rect width="48" height="48" rx="10" fill="#0f766e"/><path d="M14 12h14l6 6v18a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="#ffffff"/><path d="M28 12v6h6" stroke="#0f766e" stroke-width="2" stroke-linejoin="round"/><line x1="17" y1="22" x2="27" y2="22" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="27" x2="30" y2="27" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="32" x2="23" y2="32" stroke="#0d9488" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <span>FreeInvoice<span class="tld">.store</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Invoice Maker</a>
+        <a href="image-reducer.html" class="nav-link">Image Reducer</a>
+        <a href="word-counter.html" class="nav-link">Word Counter</a>
+        <a href="age-calculator.html" class="nav-link">Age Calculator</a>
+        <a href="percentage-calculator.html" class="nav-link active">GST &amp; % Calc</a>
+        <a href="qr-code-generator.html" class="nav-link">QR Generator</a>
+        <a href="password-generator.html" class="nav-link">Passwords</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener" class="nav-link blog-link">Blog &#8599;</a>
+      </nav>
+
+      <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div id="mobileNav" class="mobile-nav">
+      <a href="index.html" class="nav-link">Invoice Generator</a>
+      <a href="image-reducer.html" class="nav-link">Image Reducer (KB)</a>
+      <a href="word-counter.html" class="nav-link">Word Counter</a>
+      <a href="age-calculator.html" class="nav-link">Age Calculator</a>
+      <a href="percentage-calculator.html" class="nav-link active">GST &amp; % Calculator</a>
+      <a href="qr-code-generator.html" class="nav-link">QR Code Maker</a>
+      <a href="password-generator.html" class="nav-link">Password Generator</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+      <a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener" class="nav-link blog-link">Official Blog &#8599;</a>
+    </div>
+  </header>
+
+  <!-- Clean Page Header -->
+  <section class="page-header no-print">
+    <div class="container page-header-inner">
+      <span class="eyebrow">Business & Math Utility</span>
+      <h1>Free Percentage, Discount & GST Calculator</h1>
+      <p>Calculate inclusive/exclusive sales tax, retail discounts, and percentage changes in real time.</p>
+    </div>
+  </section>
+
+  <!-- Top AdSense Slot -->
+  <div class="container no-print">
+    <div class="ad-slot" aria-label="Advertisement">
+      <span>Advertisement — Responsive Leaderboard (728x90)</span>
+    </div>
+  </div>
+
+  <!-- Main Workspace -->
+  <main class="container">
+    
+  <div class="grid-2">
+    <div class="card" style="margin-bottom:0;">
+      <div class="card-header">
+        <h2 class="card-title">GST / Sales Tax Calculator</h2>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="tax-amount">Amount ($ / Rs / €)</label>
+        <input type="number" id="tax-amount" class="form-control" value="1000" oninput="calcTax()">
+      </div>
+      <div class="grid-2" style="gap:12px;">
+        <div class="form-group">
+          <label class="form-label" for="tax-rate">Tax Rate (%)</label>
+          <input type="number" id="tax-rate" class="form-control" value="18" step="0.1" oninput="calcTax()">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="tax-mode">Calculation Mode</label>
+          <select id="tax-mode" class="form-control" onchange="calcTax()">
+            <option value="exclusive">Tax Exclusive (+ Add Tax)</option>
+            <option value="inclusive">Tax Inclusive (Extract Tax)</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid-3" style="gap:10px;margin-top:10px;">
+        <div class="stat-box">
+          <div class="stat-label">Net Amount</div>
+          <div id="res-net" class="stat-value" style="font-size:18px;">1000.00</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Tax Amount</div>
+          <div id="res-tax" class="stat-value" style="font-size:18px;">180.00</div>
+        </div>
+        <div class="stat-box" style="background:var(--brand-soft);border-color:var(--brand-border);">
+          <div class="stat-label" style="color:var(--brand);">Gross Total</div>
+          <div id="res-gross" class="stat-value" style="font-size:18px;color:var(--brand);">1180.00</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:0;">
+      <div class="card-header">
+        <h2 class="card-title">Quick Percentage Formulas</h2>
+      </div>
+
+      <div style="background:var(--slate-50);padding:12px;border-radius:var(--radius-sm);border:1px solid var(--slate-200);margin-bottom:12px;">
+        <div style="font-weight:600;font-size:13.5px;margin-bottom:6px;color:var(--slate-900);">1. What is X% of Y?</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:center;">
+          <input type="number" id="p1-x" class="form-control" value="15" oninput="calcSimplePct()">
+          <input type="number" id="p1-y" class="form-control" value="250" oninput="calcSimplePct()">
+          <div id="p1-res" style="font-size:16px;font-weight:800;color:var(--brand);min-width:75px;text-align:right;">= 37.50</div>
+        </div>
+      </div>
+
+      <div style="background:var(--slate-50);padding:12px;border-radius:var(--radius-sm);border:1px solid var(--slate-200);margin-bottom:12px;">
+        <div style="font-weight:600;font-size:13.5px;margin-bottom:6px;color:var(--slate-900);">2. X is what percent of Y? (Marks %)</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:center;">
+          <input type="number" id="p2-x" class="form-control" value="840" oninput="calcSimplePct()">
+          <input type="number" id="p2-y" class="form-control" value="1100" oninput="calcSimplePct()">
+          <div id="p2-res" style="font-size:16px;font-weight:800;color:var(--slate-900);min-width:75px;text-align:right;">= 76.36%</div>
+        </div>
+      </div>
+
+      <div style="background:var(--slate-50);padding:12px;border-radius:var(--radius-sm);border:1px solid var(--slate-200);">
+        <div style="font-weight:600;font-size:13.5px;margin-bottom:6px;color:var(--slate-900);">3. Percentage Change from X to Y</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:center;">
+          <input type="number" id="p3-x" class="form-control" value="200" oninput="calcSimplePct()">
+          <input type="number" id="p3-y" class="form-control" value="260" oninput="calcSimplePct()">
+          <div id="p3-res" style="font-size:16px;font-weight:800;color:var(--brand);min-width:75px;text-align:right;">+30.00%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ad-slot no-print">
+    <span>Advertisement — In-Content Banner</span>
+  </div>
+
+  <article class="seo-article">
+    <h2>How to Calculate Percentages, Discounts &amp; GST Accurately</h2>
+    <p>Whether you are calculating inclusive or exclusive GST for a client bill on our <a href="index.html"><strong>Free Invoice Generator</strong></a>, checking retail discounts, or working out exam marks percentages, our <strong>online percentage calculator</strong> delivers instant results without manual formula errors.</p>
+
+    <h3>Core Percentage &amp; Tax Formulas</h3>
+    <ul>
+      <li><strong>Exclusive Tax:</strong> <code>Tax = (Net Price × Tax Rate) / 100</code>.</li>
+      <li><strong>Inclusive Tax Extraction:</strong> <code>Net Price = Total Price / (1 + (Tax Rate / 100))</code>.</li>
+      <li><strong>Exam Marks Percentage:</strong> <code>(Obtained Marks / Total Marks) × 100</code>.</li>
+    </ul>
+  </article>
+
+  <script>
+    function calcTax() {
+      const amt = parseFloat(document.getElementById('tax-amount').value) || 0;
+      const rate = parseFloat(document.getElementById('tax-rate').value) || 0;
+      const mode = document.getElementById('tax-mode').value;
+
+      let net = 0, tax = 0, gross = 0;
+      if (mode === 'exclusive') {
+        net = amt;
+        tax = (amt * rate) / 100;
+        gross = net + tax;
+      } else {
+        gross = amt;
+        net = amt / (1 + rate / 100);
+        tax = gross - net;
+      }
+      document.getElementById('res-net').textContent = net.toFixed(2);
+      document.getElementById('res-tax').textContent = tax.toFixed(2);
+      document.getElementById('res-gross').textContent = gross.toFixed(2);
+    }
+
+    function calcSimplePct() {
+      const p1x = parseFloat(document.getElementById('p1-x').value) || 0;
+      const p1y = parseFloat(document.getElementById('p1-y').value) || 0;
+      document.getElementById('p1-res').textContent = '= ' + ((p1x / 100) * p1y).toFixed(2);
+
+      const p2x = parseFloat(document.getElementById('p2-x').value) || 0;
+      const p2y = parseFloat(document.getElementById('p2-y').value) || 0;
+      document.getElementById('p2-res').textContent = p2y !== 0 ? '= ' + ((p2x / p2y) * 100).toFixed(2) + '%' : '0%';
+
+      const p3x = parseFloat(document.getElementById('p3-x').value) || 0;
+      const p3y = parseFloat(document.getElementById('p3-y').value) || 0;
+      if (p3x !== 0) {
+        const diff = ((p3y - p3x) / Math.abs(p3x)) * 100;
+        const sign = diff >= 0 ? '+' : '';
+        document.getElementById('p3-res').textContent = `${sign}${diff.toFixed(2)}%`;
+      } else {
+        document.getElementById('p3-res').textContent = '0%';
+      }
+    }
+  </script>
+
+    
+    <section class="tools-hub no-print" aria-label="More Browser Utilities">
+      <h2 class="section-title">All Free Tools on FreeInvoice.store</h2>
+      <p class="section-subtitle">Fast, client-side utilities that run directly in your browser without uploading files to any server.</p>
+      <div class="grid-3">
+        <a href="index.html" class="tool-card">
+          <div>
+            <h3>Invoice Generator &amp; Signature Pad</h3>
+            <p>Create, sign, print, and download A4 invoices in USD, PKR, EUR, and GBP with automatic tax and discount calculations.</p>
+          </div>
+          <span class="tool-card-link">Open Invoice Tool &rarr;</span>
+        </a>
+        <a href="image-reducer.html" class="tool-card">
+          <div>
+            <h3>Image Reducer &amp; Resizer (KB)</h3>
+            <p>Compress photos to 50KB or 200KB, resize pixel dimensions, rotate images, or increase file size in JPG, PNG, and WebP.</p>
+          </div>
+          <span class="tool-card-link">Open Image Reducer &rarr;</span>
+        </a>
+        <a href="word-counter.html" class="tool-card">
+          <div>
+            <h3>Word &amp; Character Counter</h3>
+            <p>Count words, characters, sentences, reading time, and live SEO keyword density, or convert text case in one click.</p>
+          </div>
+          <span class="tool-card-link">Open Word Counter &rarr;</span>
+        </a>
+        <a href="age-calculator.html" class="tool-card">
+          <div>
+            <h3>Exact Age Calculator</h3>
+            <p>Calculate exact age in years, months, days, weeks, and hours from your Date of Birth for official forms and exams.</p>
+          </div>
+          <span class="tool-card-link">Open Age Calculator &rarr;</span>
+        </a>
+        <a href="percentage-calculator.html" class="tool-card">
+          <div>
+            <h3>Percentage &amp; GST Calculator</h3>
+            <p>Compute inclusive and exclusive GST/sales tax, retail discounts, exam marks percentages, and percentage change.</p>
+          </div>
+          <span class="tool-card-link">Open Tax &amp; % Calculator &rarr;</span>
+        </a>
+        <a href="qr-code-generator.html" class="tool-card">
+          <div>
+            <h3>QR Code Generator</h3>
+            <p>Create permanent, custom-colored QR codes for website links, Wi-Fi access, WhatsApp, and invoice payments.</p>
+          </div>
+          <span class="tool-card-link">Open QR Generator &rarr;</span>
+        </a>
+        <a href="password-generator.html" class="tool-card">
+          <div>
+            <h3>Secure Password Generator</h3>
+            <p>Generate strong, hardware-random passwords locally in your browser with custom length and entropy scoring.</p>
+          </div>
+          <span class="tool-card-link">Open Password Tool &rarr;</span>
+        </a>
+      </div>
+    </section>
+    
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer no-print">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><rect width="48" height="48" rx="10" fill="#0f766e"/><path d="M14 12h14l6 6v18a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="#ffffff"/><path d="M28 12v6h6" stroke="#0f766e" stroke-width="2" stroke-linejoin="round"/><line x1="17" y1="22" x2="27" y2="22" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="27" x2="30" y2="27" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="32" x2="23" y2="32" stroke="#0d9488" stroke-width="2.2" stroke-linecap="round"/></svg>
+            <span>FreeInvoice.store</span>
+          </div>
+          <p style="font-size:13.5px;line-height:1.65;margin-bottom:14px;">
+            Professional browser-based tools for invoicing, image compression in KB, text analysis, and daily calculations. Built and maintained by <strong>Muhammad Rameez Tariq</strong>.
+          </p>
+          <p style="font-size:13px;color:#cbd5e1;margin:0;">
+            Email: <a href="mailto:gggrameez93@gmail.com" style="color:#5eead4;font-weight:600;">gggrameez93@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Web Utilities</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Invoice Generator</a></li>
+            <li><a href="image-reducer.html">Image Reducer in KB</a></li>
+            <li><a href="word-counter.html">Word Counter</a></li>
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>More Tools</h4>
+          <ul class="footer-links">
+            <li><a href="percentage-calculator.html">GST &amp; % Calculator</a></li>
+            <li><a href="qr-code-generator.html">QR Code Generator</a></li>
+            <li><a href="password-generator.html">Password Generator</a></li>
+            <li><a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener">Official Blog &#8599;</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company &amp; Legal</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us (Muhammad Rameez Tariq)</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 FreeInvoice.store. Developed by <strong>Muhammad Rameez Tariq</strong>. All rights reserved.</div>
+        <div>100% Client-Side Processing &bull; Mobile Ready</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Bottom Anchor Ad -->
+  <div id="stickyAd" class="sticky-ad no-print">
+    <button type="button" class="sticky-ad-close" onclick="closeStickyAd()" aria-label="Close Ad">&times;</button>
+    <div style="font-size:11.5px;color:#94a3b8;font-weight:500;">
+      Advertisement — Sticky Anchor Slot
+    </div>
+  </div>
+
+  <script src="assets/js/common.js"></script>
+</body>
+</html>

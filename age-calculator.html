@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Exact Age Calculator Online - Years, Months & Days</title>
+  <meta name="description" content="Calculate your exact chronological age in years, months, weeks, days, and hours from your Date of Birth. Ideal for job portals, exams, and birthday countdowns.">
+  <meta name="keywords" content="age calculator, age counter online, date of birth calculator, exact age calculator, chronological age calculator, birthday countdown">
+  <meta name="author" content="Muhammad Rameez Tariq">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://freeinvoice.store/age-calculator.html">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Exact Age Calculator Online - Years, Months & Days">
+  <meta property="og:description" content="Calculate your exact chronological age in years, months, weeks, days, and hours from your Date of Birth. Ideal for job portals, exams, and birthday countdowns.">
+  <meta property="og:url" content="https://freeinvoice.store/age-calculator.html">
+  <meta property="og:site_name" content="FreeInvoice.store">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+  
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="site-header no-print">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><rect width="48" height="48" rx="10" fill="#0f766e"/><path d="M14 12h14l6 6v18a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="#ffffff"/><path d="M28 12v6h6" stroke="#0f766e" stroke-width="2" stroke-linejoin="round"/><line x1="17" y1="22" x2="27" y2="22" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="27" x2="30" y2="27" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="32" x2="23" y2="32" stroke="#0d9488" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <span>FreeInvoice<span class="tld">.store</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Invoice Maker</a>
+        <a href="image-reducer.html" class="nav-link">Image Reducer</a>
+        <a href="word-counter.html" class="nav-link">Word Counter</a>
+        <a href="age-calculator.html" class="nav-link active">Age Calculator</a>
+        <a href="percentage-calculator.html" class="nav-link">GST &amp; % Calc</a>
+        <a href="qr-code-generator.html" class="nav-link">QR Generator</a>
+        <a href="password-generator.html" class="nav-link">Passwords</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener" class="nav-link blog-link">Blog &#8599;</a>
+      </nav>
+
+      <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div id="mobileNav" class="mobile-nav">
+      <a href="index.html" class="nav-link">Invoice Generator</a>
+      <a href="image-reducer.html" class="nav-link">Image Reducer (KB)</a>
+      <a href="word-counter.html" class="nav-link">Word Counter</a>
+      <a href="age-calculator.html" class="nav-link active">Age Calculator</a>
+      <a href="percentage-calculator.html" class="nav-link">GST &amp; % Calculator</a>
+      <a href="qr-code-generator.html" class="nav-link">QR Code Maker</a>
+      <a href="password-generator.html" class="nav-link">Password Generator</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+      <a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener" class="nav-link blog-link">Official Blog &#8599;</a>
+    </div>
+  </header>
+
+  <!-- Clean Page Header -->
+  <section class="page-header no-print">
+    <div class="container page-header-inner">
+      <span class="eyebrow">Date & Time Calculator</span>
+      <h1>Free Exact Age Calculator</h1>
+      <p>Find your exact chronological age in years, months, days, weeks, and hours from your Date of Birth.</p>
+    </div>
+  </section>
+
+  <!-- Top AdSense Slot -->
+  <div class="container no-print">
+    <div class="ad-slot" aria-label="Advertisement">
+      <span>Advertisement — Responsive Leaderboard (728x90)</span>
+    </div>
+  </div>
+
+  <!-- Main Workspace -->
+  <main class="container">
+    
+  <div class="card">
+    <div class="grid-2" style="align-items:end;">
+      <div class="form-group" style="margin-bottom:0;">
+        <label class="form-label" for="dob-input">Date of Birth (DOB)</label>
+        <input type="date" id="dob-input" class="form-control" onchange="calculateExactAge()">
+      </div>
+      <div class="form-group" style="margin-bottom:0;">
+        <label class="form-label" for="target-date-input">Calculate Age As Of Date</label>
+        <input type="date" id="target-date-input" class="form-control" onchange="calculateExactAge()">
+      </div>
+    </div>
+
+    <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
+      <button type="button" class="btn btn-primary" onclick="calculateExactAge()">Calculate Exact Age</button>
+      <button type="button" class="btn btn-outline" onclick="copyAgeSummary()">Copy Result</button>
+    </div>
+
+    <div id="age-results" style="margin-top:22px;border-top:1px solid var(--slate-200);padding-top:20px;">
+      <div class="grid-3" style="margin-bottom:16px;">
+        <div class="stat-box" style="background:var(--brand-soft);border-color:var(--brand-border);">
+          <div id="age-years" class="stat-value" style="font-size:32px;color:var(--brand);">25</div>
+          <div class="stat-label" style="color:var(--brand);">Years</div>
+        </div>
+        <div class="stat-box">
+          <div id="age-months" class="stat-value" style="font-size:32px;">0</div>
+          <div class="stat-label">Months</div>
+        </div>
+        <div class="stat-box">
+          <div id="age-days" class="stat-value" style="font-size:32px;">0</div>
+          <div class="stat-label">Days</div>
+        </div>
+      </div>
+
+      <div class="grid-4">
+        <div class="stat-box">
+          <div id="total-months" class="stat-value" style="font-size:19px;">0</div>
+          <div class="stat-label">Total Months</div>
+        </div>
+        <div class="stat-box">
+          <div id="total-weeks" class="stat-value" style="font-size:19px;">0</div>
+          <div class="stat-label">Total Weeks</div>
+        </div>
+        <div class="stat-box">
+          <div id="total-days" class="stat-value" style="font-size:19px;">0</div>
+          <div class="stat-label">Total Days</div>
+        </div>
+        <div class="stat-box">
+          <div id="total-hours" class="stat-value" style="font-size:19px;">0</div>
+          <div class="stat-label">Total Hours</div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:14px;">
+        <div class="stat-box" style="text-align:left;">
+          <div class="stat-label">Next Birthday Countdown</div>
+          <div id="next-bday" style="font-size:16.5px;font-weight:700;color:var(--slate-900);margin-top:4px;">--</div>
+        </div>
+        <div class="stat-box" style="text-align:left;">
+          <div class="stat-label">Day of the Week Born</div>
+          <div id="born-day-name" style="font-size:16.5px;font-weight:700;color:var(--brand);margin-top:4px;">--</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ad-slot no-print">
+    <span>Advertisement — In-Content Banner</span>
+  </div>
+
+  <article class="seo-article">
+    <h2>How to Calculate Your Exact Chronological Age Online</h2>
+    <p>Whether you are applying for a competitive civil service examination (CSS, PPSC, FPSC, UPSC), verifying admission eligibility, or calculating exact date intervals between contracts, our <strong>free online age calculator</strong> computes your exact age in years, months, days, weeks, and hours from your Date of Birth.</p>
+
+    <div class="highlight-box">
+      <h4>Preparing an Official Online Application?</h4>
+      <p style="margin:0;">Most government and university portals require verifying your exact age on the application closing date, uploading a 50KB passport photo (use our <a href="image-reducer.html"><strong>Free Image Reducer in KB</strong></a>), and submitting a personal statement within word limits (check our <a href="word-counter.html"><strong>Word Counter</strong></a>).</p>
+    </div>
+
+    <h3>How the Date of Birth Calculator Works</h3>
+    <ol>
+      <li>Select your birth date in the <strong>Date of Birth</strong> field.</li>
+      <li>Keep the second date set to today, or pick a specific cutoff date mentioned in an official job or admission notice.</li>
+      <li>Review your exact Years, Months, Days, Total Weeks, Total Days, and Next Birthday Countdown immediately.</li>
+    </ol>
+
+    <h3>Frequently Asked Questions (FAQs)</h3>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h4>1. Does this calculator account for leap years (29 days in February)?</h4>
+        <p>Yes, our Gregorian calendar logic accounts for every leap year and varying month lengths (28, 29, 30, and 31 days) automatically.</p>
+      </div>
+      <div class="faq-item">
+        <h4>2. Can I use this tool to find the exact duration between two business dates?</h4>
+        <p>Yes! Enter your project start date in the first box and due date in the second box, then generate your client bill on our <a href="index.html"><strong>Free Invoice Generator</strong></a>.</p>
+      </div>
+    </div>
+  </article>
+
+  <script>
+    const dobInput = document.getElementById('dob-input');
+    const targetInput = document.getElementById('target-date-input');
+
+    const now = new Date();
+    const defaultDob = new Date(now.getFullYear() - 25, now.getMonth(), Math.min(now.getDate(), 28));
+    dobInput.valueAsDate = defaultDob;
+    targetInput.valueAsDate = now;
+
+    function calculateExactAge() {
+      const dobVal = dobInput.value;
+      const targetVal = targetInput.value;
+      if (!dobVal || !targetVal) return;
+
+      const dob = new Date(dobVal + 'T00:00:00');
+      const target = new Date(targetVal + 'T00:00:00');
+
+      if (dob > target) {
+        showToast('Date of birth must be before the target date.');
+        return;
+      }
+
+      let years = target.getFullYear() - dob.getFullYear();
+      let months = target.getMonth() - dob.getMonth();
+      let days = target.getDate() - dob.getDate();
+
+      if (days < 0) {
+        months--;
+        const prevMonth = new Date(target.getFullYear(), target.getMonth(), 0);
+        days += prevMonth.getDate();
+      }
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      const diffMs = target.getTime() - dob.getTime();
+      const totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+      const totalWeeks = Math.floor(totalDays / 7);
+      const totalMonths = years * 12 + months;
+      const totalHours = totalDays * 24;
+
+      document.getElementById('age-years').textContent = years;
+      document.getElementById('age-months').textContent = months;
+      document.getElementById('age-days').textContent = days;
+
+      document.getElementById('total-months').textContent = totalMonths.toLocaleString();
+      document.getElementById('total-weeks').textContent = totalWeeks.toLocaleString();
+      document.getElementById('total-days').textContent = totalDays.toLocaleString();
+      document.getElementById('total-hours').textContent = totalHours.toLocaleString();
+
+      const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      document.getElementById('born-day-name').textContent = daysOfWeek[dob.getDay()];
+
+      let nextBday = new Date(target.getFullYear(), dob.getMonth(), dob.getDate());
+      if (nextBday < target) {
+        nextBday.setFullYear(target.getFullYear() + 1);
+      }
+      const daysUntilBday = Math.ceil((nextBday.getTime() - target.getTime()) / (1000 * 60 * 60 * 24));
+      document.getElementById('next-bday').textContent = daysUntilBday === 0
+        ? 'Happy Birthday Today!'
+        : `${daysUntilBday} Days Remaining (${daysOfWeek[nextBday.getDay()]})`;
+    }
+
+    function copyAgeSummary() {
+      const y = document.getElementById('age-years').textContent;
+      const m = document.getElementById('age-months').textContent;
+      const d = document.getElementById('age-days').textContent;
+      navigator.clipboard.writeText(`Age: ${y} Years, ${m} Months, ${d} Days`);
+      showToast('Copied to clipboard.');
+    }
+
+    window.addEventListener('DOMContentLoaded', calculateExactAge);
+  </script>
+
+    
+    <section class="tools-hub no-print" aria-label="More Browser Utilities">
+      <h2 class="section-title">All Free Tools on FreeInvoice.store</h2>
+      <p class="section-subtitle">Fast, client-side utilities that run directly in your browser without uploading files to any server.</p>
+      <div class="grid-3">
+        <a href="index.html" class="tool-card">
+          <div>
+            <h3>Invoice Generator &amp; Signature Pad</h3>
+            <p>Create, sign, print, and download A4 invoices in USD, PKR, EUR, and GBP with automatic tax and discount calculations.</p>
+          </div>
+          <span class="tool-card-link">Open Invoice Tool &rarr;</span>
+        </a>
+        <a href="image-reducer.html" class="tool-card">
+          <div>
+            <h3>Image Reducer &amp; Resizer (KB)</h3>
+            <p>Compress photos to 50KB or 200KB, resize pixel dimensions, rotate images, or increase file size in JPG, PNG, and WebP.</p>
+          </div>
+          <span class="tool-card-link">Open Image Reducer &rarr;</span>
+        </a>
+        <a href="word-counter.html" class="tool-card">
+          <div>
+            <h3>Word &amp; Character Counter</h3>
+            <p>Count words, characters, sentences, reading time, and live SEO keyword density, or convert text case in one click.</p>
+          </div>
+          <span class="tool-card-link">Open Word Counter &rarr;</span>
+        </a>
+        <a href="age-calculator.html" class="tool-card">
+          <div>
+            <h3>Exact Age Calculator</h3>
+            <p>Calculate exact age in years, months, days, weeks, and hours from your Date of Birth for official forms and exams.</p>
+          </div>
+          <span class="tool-card-link">Open Age Calculator &rarr;</span>
+        </a>
+        <a href="percentage-calculator.html" class="tool-card">
+          <div>
+            <h3>Percentage &amp; GST Calculator</h3>
+            <p>Compute inclusive and exclusive GST/sales tax, retail discounts, exam marks percentages, and percentage change.</p>
+          </div>
+          <span class="tool-card-link">Open Tax &amp; % Calculator &rarr;</span>
+        </a>
+        <a href="qr-code-generator.html" class="tool-card">
+          <div>
+            <h3>QR Code Generator</h3>
+            <p>Create permanent, custom-colored QR codes for website links, Wi-Fi access, WhatsApp, and invoice payments.</p>
+          </div>
+          <span class="tool-card-link">Open QR Generator &rarr;</span>
+        </a>
+        <a href="password-generator.html" class="tool-card">
+          <div>
+            <h3>Secure Password Generator</h3>
+            <p>Generate strong, hardware-random passwords locally in your browser with custom length and entropy scoring.</p>
+          </div>
+          <span class="tool-card-link">Open Password Tool &rarr;</span>
+        </a>
+      </div>
+    </section>
+    
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer no-print">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><rect width="48" height="48" rx="10" fill="#0f766e"/><path d="M14 12h14l6 6v18a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="#ffffff"/><path d="M28 12v6h6" stroke="#0f766e" stroke-width="2" stroke-linejoin="round"/><line x1="17" y1="22" x2="27" y2="22" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="27" x2="30" y2="27" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="32" x2="23" y2="32" stroke="#0d9488" stroke-width="2.2" stroke-linecap="round"/></svg>
+            <span>FreeInvoice.store</span>
+          </div>
+          <p style="font-size:13.5px;line-height:1.65;margin-bottom:14px;">
+            Professional browser-based tools for invoicing, image compression in KB, text analysis, and daily calculations. Built and maintained by <strong>Muhammad Rameez Tariq</strong>.
+          </p>
+          <p style="font-size:13px;color:#cbd5e1;margin:0;">
+            Email: <a href="mailto:gggrameez93@gmail.com" style="color:#5eead4;font-weight:600;">gggrameez93@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Web Utilities</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Invoice Generator</a></li>
+            <li><a href="image-reducer.html">Image Reducer in KB</a></li>
+            <li><a href="word-counter.html">Word Counter</a></li>
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>More Tools</h4>
+          <ul class="footer-links">
+            <li><a href="percentage-calculator.html">GST &amp; % Calculator</a></li>
+            <li><a href="qr-code-generator.html">QR Code Generator</a></li>
+            <li><a href="password-generator.html">Password Generator</a></li>
+            <li><a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener">Official Blog &#8599;</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company &amp; Legal</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us (Muhammad Rameez Tariq)</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 FreeInvoice.store. Developed by <strong>Muhammad Rameez Tariq</strong>. All rights reserved.</div>
+        <div>100% Client-Side Processing &bull; Mobile Ready</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Bottom Anchor Ad -->
+  <div id="stickyAd" class="sticky-ad no-print">
+    <button type="button" class="sticky-ad-close" onclick="closeStickyAd()" aria-label="Close Ad">&times;</button>
+    <div style="font-size:11.5px;color:#94a3b8;font-weight:500;">
+      Advertisement — Sticky Anchor Slot
+    </div>
+  </div>
+
+  <script src="assets/js/common.js"></script>
+</body>
+</html>

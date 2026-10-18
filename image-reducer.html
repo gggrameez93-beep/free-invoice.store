@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Image Reducer & Resizer - Compress Images in KB Online</title>
+  <meta name="description" content="The ultimate free image reducer and resizer online. Easily get an image in 50kb, use our image reducer to 200kb, or compress images in KB securely offline.">
+  <meta name="keywords" content="image reducer, image reducer in mb, image reducer to 200kb, image reducer to kb, image reducer online, image resizer, image resizer free, image resizer online, image in 50kb, image in 50kb jpg, image in 50kb convert, free quiilty increser, reduced image in 50 kb">
+  <meta name="author" content="Muhammad Rameez Tariq">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://freeinvoice.store/image-reducer.html">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Image Reducer & Resizer - Compress Images in KB Online">
+  <meta property="og:description" content="The ultimate free image reducer and resizer online. Easily get an image in 50kb, use our image reducer to 200kb, or compress images in KB securely offline.">
+  <meta property="og:url" content="https://freeinvoice.store/image-reducer.html">
+  <meta property="og:site_name" content="FreeInvoice.store">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <style>
+    .upload-dropzone {
+      background: var(--white);
+      border: 2px dashed #94a3b8;
+      border-radius: var(--radius-md);
+      padding: 44px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background 0.15s ease;
+      margin-bottom: 24px;
+    }
+    .upload-dropzone:hover, .upload-dropzone.drag-over {
+      border-color: var(--brand);
+      background: var(--brand-soft);
+    }
+    .checkerboard-preview {
+      background-color: #f1f5f9;
+      background-image: linear-gradient(45deg, #e2e8f0 25%, transparent 25%),
+                        linear-gradient(-45deg, #e2e8f0 25%, transparent 25%),
+                        linear-gradient(45deg, transparent 75%, #e2e8f0 75%),
+                        linear-gradient(-45deg, transparent 75%, #e2e8f0 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--slate-200);
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 12px;
+    }
+    .checkerboard-preview img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .preset-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .preset-pill {
+      background: var(--slate-50);
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius-sm);
+      padding: 6px 10px;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--slate-700);
+    }
+    .preset-pill:hover {
+      background: var(--brand-soft);
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+  </style>
+
+  
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="site-header no-print">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><rect width="48" height="48" rx="10" fill="#0f766e"/><path d="M14 12h14l6 6v18a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="#ffffff"/><path d="M28 12v6h6" stroke="#0f766e" stroke-width="2" stroke-linejoin="round"/><line x1="17" y1="22" x2="27" y2="22" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="27" x2="30" y2="27" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="32" x2="23" y2="32" stroke="#0d9488" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <span>FreeInvoice<span class="tld">.store</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Invoice Maker</a>
+        <a href="image-reducer.html" class="nav-link active">Image Reducer</a>
+        <a href="word-counter.html" class="nav-link">Word Counter</a>
+        <a href="age-calculator.html" class="nav-link">Age Calculator</a>
+        <a href="percentage-calculator.html" class="nav-link">GST &amp; % Calc</a>
+        <a href="qr-code-generator.html" class="nav-link">QR Generator</a>
+        <a href="password-generator.html" class="nav-link">Passwords</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener" class="nav-link blog-link">Blog &#8599;</a>
+      </nav>
+
+      <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div id="mobileNav" class="mobile-nav">
+      <a href="index.html" class="nav-link">Invoice Generator</a>
+      <a href="image-reducer.html" class="nav-link active">Image Reducer (KB)</a>
+      <a href="word-counter.html" class="nav-link">Word Counter</a>
+      <a href="age-calculator.html" class="nav-link">Age Calculator</a>
+      <a href="percentage-calculator.html" class="nav-link">GST &amp; % Calculator</a>
+      <a href="qr-code-generator.html" class="nav-link">QR Code Maker</a>
+      <a href="password-generator.html" class="nav-link">Password Generator</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+      <a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener" class="nav-link blog-link">Official Blog &#8599;</a>
+    </div>
+  </header>
+
+  <!-- Clean Page Header -->
+  <section class="page-header no-print">
+    <div class="container page-header-inner">
+      <span class="eyebrow">Offline Image Optimizer</span>
+      <h1>Free Image Reducer & Resizer in KB</h1>
+      <p>Reduce or increase image file size in KB/MB, resize pixel dimensions, and rotate photos locally in your browser.</p>
+    </div>
+  </section>
+
+  <!-- Top AdSense Slot -->
+  <div class="container no-print">
+    <div class="ad-slot" aria-label="Advertisement">
+      <span>Advertisement — Responsive Leaderboard (728x90)</span>
+    </div>
+  </div>
+
+  <!-- Main Workspace -->
+  <main class="container">
+    
+  <!-- Upload Area -->
+  <div id="uploadArea" class="upload-dropzone">
+    <div style="width:56px;height:56px;border-radius:12px;background:var(--brand-soft);color:var(--brand);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+    </div>
+    <h2 style="margin:0 0 6px;font-size:19px;color:var(--slate-900);">Drag &amp; Drop your image here or click to browse</h2>
+    <p style="margin:0 0 18px;color:var(--slate-500);font-size:14px;">Supports JPG, JPEG, PNG &amp; WebP up to 20MB — 100% offline browser processing</p>
+    <input type="file" id="fileInput" style="display:none;" accept="image/*">
+    <button type="button" class="btn btn-primary" style="padding:11px 26px;font-size:15px;pointer-events:none;">Select Image</button>
+  </div>
+
+  <!-- Editor Area -->
+  <div id="editorArea" class="card" style="display:none;">
+    <div class="grid-2">
+      <!-- Left: Preview -->
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+          <strong style="font-size:15.5px;color:var(--slate-900);">Live Preview</strong>
+          <div style="display:flex;gap:6px;">
+            <button type="button" id="rotateLeftBtn" class="btn btn-outline" style="padding:6px 10px;font-size:13px;">Rotate Left</button>
+            <button type="button" id="rotateRightBtn" class="btn btn-outline" style="padding:6px 10px;font-size:13px;">Rotate Right</button>
+          </div>
+        </div>
+
+        <div class="checkerboard-preview">
+          <img id="imagePreview" src="" alt="Preview">
+        </div>
+
+        <div class="grid-2" style="margin-top:14px;gap:12px;">
+          <div class="stat-box">
+            <div class="stat-label">Original Size</div>
+            <div id="originalSize" class="stat-value" style="font-size:20px;">0 KB</div>
+          </div>
+          <div class="stat-box" style="background:var(--brand-soft);border-color:var(--brand-border);">
+            <div class="stat-label" style="color:var(--brand);">New Size</div>
+            <div id="newSize" class="stat-value" style="font-size:22px;color:var(--brand);">0 KB</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Controls -->
+      <div style="display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <div class="card-header" style="padding-bottom:10px;margin-bottom:14px;">
+            <h3 class="card-title">Optimization Settings</h3>
+          </div>
+
+          <div class="grid-2" style="gap:12px;">
+            <div class="form-group">
+              <label class="form-label" for="widthInput">Width (px)</label>
+              <input type="number" id="widthInput" class="form-control" min="10" max="8000">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="heightInput">Height (px)</label>
+              <input type="number" id="heightInput" class="form-control" min="10" max="8000">
+            </div>
+          </div>
+
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:500;font-size:14px;margin-bottom:14px;color:var(--slate-700);">
+            <input type="checkbox" id="aspectRatioLock" checked style="width:16px;height:16px;accent-color:var(--brand);">
+            <span>Maintain Aspect Ratio</span>
+          </label>
+
+          <div style="margin-bottom:14px;">
+            <span class="form-label">Quick Target Presets:</span>
+            <div class="preset-pills">
+              <button type="button" class="preset-pill" onclick="applyPreset(600, 72)">~50 KB (Portal/ID)</button>
+              <button type="button" class="preset-pill" onclick="applyPreset(900, 78)">~100 KB (Standard)</button>
+              <button type="button" class="preset-pill" onclick="applyPreset(1280, 82)">~200 KB (Web HD)</button>
+              <button type="button" class="preset-pill" onclick="applyPreset(2200, 100)">Increase KB (Max)</button>
+            </div>
+          </div>
+
+          <div style="background:var(--slate-50);padding:14px;border-radius:var(--radius-sm);border:1px solid var(--slate-200);margin-bottom:14px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <label class="form-label" for="qualityInput" style="margin:0;">Compression Level</label>
+              <span style="background:var(--brand);color:#fff;font-weight:700;font-size:12.5px;padding:2px 10px;border-radius:99px;"><span id="qualityVal">80</span>%</span>
+            </div>
+            <input type="range" id="qualityInput" min="1" max="100" value="80" style="width:100%;accent-color:var(--brand);cursor:pointer;">
+
+            <div id="lowQualityWarning" style="display:none;margin-top:10px;padding:8px 10px;background:var(--danger-soft);border:1px solid #fecaca;border-radius:6px;color:var(--danger);font-size:12px;font-weight:600;">
+              Warning: Quality is below 40%. Keep the slider above 65% and reduce Width (px) instead to prevent blurriness.
+            </div>
+
+            <p style="margin:8px 0 0;font-size:12px;color:var(--slate-500);">
+              Tip: Slide right (100%) to increase file size, or slide left to reduce KB size.
+            </p>
+            <p id="pngWarning" style="display:none;margin:6px 0 0;font-size:12px;color:var(--danger);font-weight:600;">
+              Note: PNG is lossless. Select JPG or WebP below to compress file size in KB.
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="formatSelect">Export Format</label>
+            <select id="formatSelect" class="form-control">
+              <option value="image/jpeg">JPG / JPEG (Standard)</option>
+              <option value="image/png">PNG (High Quality)</option>
+              <option value="image/webp">WebP (Best for Web)</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 2fr;gap:10px;margin-top:14px;">
+          <button type="button" id="resetBtn" class="btn btn-outline">Cancel</button>
+          <button type="button" id="downloadBtn" class="btn btn-primary">Download Image</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ad-slot no-print">
+    <span>Advertisement — In-Content Banner</span>
+  </div>
+
+  <!-- Comprehensive SEO Article -->
+  <article class="seo-article">
+    <h2>The Ultimate Free Image Reducer &amp; Image Resizer Online</h2>
+    <p>Welcome to our fast, client-side <strong>image resizer free</strong> utility on <strong>FreeInvoice.store</strong>. Whether you need a reliable <strong>image reducer online</strong> for a company logo on our <a href="index.html"><strong>Free Invoice Generator</strong></a>, or want an exact <strong>image in 50kb jpg</strong> for an admission form or government portal, our tool delivers crisp results instantly.</p>
+
+    <div class="highlight-box">
+      <h4>100% Safe, Secure &amp; Offline Browser Processing</h4>
+      <p style="margin:0;">While other online tools upload your personal photos and ID cards to remote servers, all processing here happens strictly inside your browser. Your confidential documents and pictures are never uploaded to any external database.</p>
+    </div>
+
+    <h3>How to Use (Quality Kaise Bachayein? — Golden Rule for 50KB Photos)</h3>
+    <p>Agar aap apni photo ka size <strong>50KB ya 100KB</strong> tak lana chahte hain aur chahte hain ke photo bilkul saaf (clear) rahe aur phate nahi, toh in steps ko follow karein:</p>
+    <ol>
+      <li>Upload your image using the box above.</li>
+      <li>If the image resolution is very high (e.g., 3000x4000 pixels), lower the <strong>Width (px)</strong> box to <strong>600px or 800px</strong> first (or click the <em>~50 KB</em> preset).</li>
+      <li>Leave the compression slider around <strong>70% or 80%</strong>. Your image will stay clear and sharp while dropping below 50KB immediately.</li>
+    </ol>
+
+    <h3>Why Use an Image Reducer to KB?</h3>
+    <ul>
+      <li><strong>Strict Portal Requirements:</strong> University admission systems and job portals frequently require a <strong>reduced image in 50 kb</strong> or an <strong>image reducer to 200kb</strong> alongside exact age verification (which you can check on our <a href="age-calculator.html"><strong>Exact Age Calculator</strong></a>).</li>
+      <li><strong>Website Speed &amp; SEO:</strong> Using an <strong>image resizer online</strong> to export WebP graphics improves loading speed. Pair optimized images with well-written content analyzed via our <a href="word-counter.html"><strong>Word Counter</strong></a>.</li>
+      <li><strong>Free Quality Increaser:</strong> Searching for a <strong>free quiilty increser</strong> when an online form rejects a file for being too small? Push the compression slider to 100% and increase pixel dimensions to expand the KB size safely.</li>
+    </ul>
+
+    <h3>International Optimization Support</h3>
+    <div class="grid-3" style="margin:18px 0;">
+      <div class="stat-box" style="text-align:left;">
+        <h4 style="margin:0 0 6px;color:var(--brand);font-size:15px;">Reducir tamaño de imagen (ES)</h4>
+        <p style="margin:0;font-size:13.5px;">Herramienta gratuita para <strong>reducir tamaño de imagen</strong> en KB y comprimir fotos online sin perder calidad.</p>
+      </div>
+      <div class="stat-box" style="text-align:left;">
+        <h4 style="margin:0 0 6px;color:var(--brand);font-size:15px;">Compresseur d'Images (FR)</h4>
+        <p style="margin:0;font-size:13.5px;">Le meilleur outil pour <strong>réduire la taille de l'image</strong> en ligne. Compresser des photos en KB rapidement.</p>
+      </div>
+      <div class="stat-box" style="text-align:left;">
+        <h4 style="margin:0 0 6px;color:var(--brand);font-size:15px;">Bildgröße verkleinern (DE)</h4>
+        <p style="margin:0;font-size:13.5px;">Kostenlos <strong>Bildgröße verkleinern</strong> in KB/MB. Bilder komprimieren und zuschneiden online.</p>
+      </div>
+    </div>
+
+    <h3>Frequently Asked Questions (FAQs)</h3>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h4>1. Image kaise resize karein? (How to resize image online)</h4>
+        <p>Upload your image, adjust the Width or Height in the optimization settings (or click a KB preset), and download your resized photo immediately.</p>
+      </div>
+      <div class="faq-item">
+        <h4>2. How to get a reduced image in 50 KB or 100 KB?</h4>
+        <p>Upload your photo, set Width to 600px, and slide the compression level slightly left while watching the "New Size" live preview until it reaches 48–50 KB.</p>
+      </div>
+      <div class="faq-item">
+        <h4>3. Is my personal data and ID card safe here?</h4>
+        <p>Yes. Our free image resizer runs 100% offline inside your web browser. Your files are never uploaded to any server.</p>
+      </div>
+    </div>
+  </article>
+
+  <script>
+    const uploadArea = document.getElementById('uploadArea');
+    const fileInput = document.getElementById('fileInput');
+    const editorArea = document.getElementById('editorArea');
+    const imagePreview = document.getElementById('imagePreview');
+    const widthInput = document.getElementById('widthInput');
+    const heightInput = document.getElementById('heightInput');
+    const qualityInput = document.getElementById('qualityInput');
+    const qualityVal = document.getElementById('qualityVal');
+    const lowQualityWarning = document.getElementById('lowQualityWarning');
+    const formatSelect = document.getElementById('formatSelect');
+    const aspectRatioLock = document.getElementById('aspectRatioLock');
+    const rotateLeftBtn = document.getElementById('rotateLeftBtn');
+    const rotateRightBtn = document.getElementById('rotateRightBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const originalSizeTxt = document.getElementById('originalSize');
+    const newSizeTxt = document.getElementById('newSize');
+
+    let originalImage = new Image();
+    let originalFileName = 'image';
+    let originalRatio = 1;
+    let rotationAngle = 0;
+    let processTimeout;
+
+    uploadArea.addEventListener('click', () => fileInput.click());
+    uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); uploadArea.classList.add('drag-over'); });
+    uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('drag-over'));
+    uploadArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      uploadArea.classList.remove('drag-over');
+      if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+    });
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files.length) handleFile(e.target.files[0]);
+    });
+
+    function handleFile(file) {
+      if (!file.type.match('image.*')) { alert('Please select an image file.'); return; }
+      if (file.size > 20 * 1024 * 1024) { alert('File is too large! Please select an image under 20MB.'); return; }
+
+      originalFileName = file.name.replace(/\.[^/.]+$/, '') || 'image';
+      originalSizeTxt.textContent = (file.size / 1024).toFixed(1) + ' KB';
+
+      if (file.type === 'image/png') formatSelect.value = 'image/png';
+      else if (file.type === 'image/webp') formatSelect.value = 'image/webp';
+      else formatSelect.value = 'image/jpeg';
+
+      checkPNGWarning();
+      const reader = new FileReader();
+      reader.onload = (e) => { originalImage.src = e.target.result; };
+      reader.readAsDataURL(file);
+    }
+
+    originalImage.onload = () => {
+      rotationAngle = 0;
+      originalRatio = originalImage.width / originalImage.height;
+      widthInput.value = originalImage.width;
+      heightInput.value = originalImage.height;
+      qualityInput.value = 80;
+      qualityVal.textContent = 80;
+      lowQualityWarning.style.display = 'none';
+      uploadArea.style.display = 'none';
+      editorArea.style.display = 'block';
+      processImage();
+    };
+
+    function debouncedProcessImage() {
+      clearTimeout(processTimeout);
+      processTimeout = setTimeout(processImage, 120);
+    }
+
+    function applyPreset(targetWidth, targetQuality) {
+      if (!originalImage.src) return;
+      formatSelect.value = 'image/jpeg';
+      checkPNGWarning();
+      widthInput.value = targetWidth;
+      heightInput.value = Math.round(targetWidth / originalRatio);
+      qualityInput.value = targetQuality;
+      qualityVal.textContent = targetQuality;
+      processImage();
+      showToast('Preset applied.');
+    }
+
+    widthInput.addEventListener('input', () => {
+      if (aspectRatioLock.checked && widthInput.value) heightInput.value = Math.round(widthInput.value / originalRatio);
+      debouncedProcessImage();
+    });
+    heightInput.addEventListener('input', () => {
+      if (aspectRatioLock.checked && heightInput.value) widthInput.value = Math.round(heightInput.value * originalRatio);
+      debouncedProcessImage();
+    });
+
+    qualityInput.addEventListener('input', () => {
+      const q = parseInt(qualityInput.value);
+      qualityVal.textContent = q;
+      lowQualityWarning.style.display = q < 40 ? 'block' : 'none';
+      debouncedProcessImage();
+    });
+
+    function checkPNGWarning() {
+      const pngWarning = document.getElementById('pngWarning');
+      if (formatSelect.value === 'image/png') {
+        pngWarning.style.display = 'block';
+        qualityInput.disabled = true;
+      } else {
+        pngWarning.style.display = 'none';
+        qualityInput.disabled = false;
+      }
+    }
+
+    formatSelect.addEventListener('change', () => {
+      checkPNGWarning();
+      debouncedProcessImage();
+    });
+
+    rotateLeftBtn.addEventListener('click', () => {
+      rotationAngle = (rotationAngle - 90 + 360) % 360;
+      processImage();
+    });
+    rotateRightBtn.addEventListener('click', () => {
+      rotationAngle = (rotationAngle + 90) % 360;
+      processImage();
+    });
+
+    function processImage() {
+      if (!originalImage.src) return;
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const targetWidth = Math.max(1, parseInt(widthInput.value) || originalImage.width);
+      const targetHeight = Math.max(1, parseInt(heightInput.value) || originalImage.height);
+
+      if (rotationAngle === 90 || rotationAngle === 270) {
+        canvas.width = targetHeight; canvas.height = targetWidth;
+      } else {
+        canvas.width = targetWidth; canvas.height = targetHeight;
+      }
+
+      ctx.translate(canvas.width / 2, canvas.height / 2);
+      ctx.rotate((rotationAngle * Math.PI) / 180);
+
+      if (formatSelect.value === 'image/jpeg') {
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(-targetWidth / 2, -targetHeight / 2, targetWidth, targetHeight);
+      }
+      ctx.drawImage(originalImage, -targetWidth / 2, -targetHeight / 2, targetWidth, targetHeight);
+
+      const quality = parseInt(qualityInput.value) / 100;
+      const dataUrl = canvas.toDataURL(formatSelect.value, quality);
+      imagePreview.src = dataUrl;
+
+      const base64Length = dataUrl.length - (dataUrl.indexOf(',') + 1);
+      const padding = (dataUrl.charAt(dataUrl.length - 2) === '=') ? 2 : ((dataUrl.charAt(dataUrl.length - 1) === '=') ? 1 : 0);
+      const fileSize = (base64Length * 0.75) - padding;
+
+      newSizeTxt.textContent = (fileSize / 1024).toFixed(1) + ' KB';
+      downloadBtn.setAttribute('data-href', dataUrl);
+    }
+
+    downloadBtn.addEventListener('click', () => {
+      if (downloadBtn.disabled) return;
+      const originalHTML = downloadBtn.innerHTML;
+      downloadBtn.disabled = true;
+      let timeLeft = 5;
+      downloadBtn.innerHTML = `Processing... (${timeLeft}s)`;
+
+      const countdownInterval = setInterval(() => {
+        timeLeft--;
+        if (timeLeft > 0) {
+          downloadBtn.innerHTML = `Processing... (${timeLeft}s)`;
+        } else {
+          clearInterval(countdownInterval);
+          const link = document.createElement('a');
+          let ext = formatSelect.value.split('/')[1];
+          if (ext === 'jpeg') ext = 'jpg';
+          link.download = `${originalFileName}_optimized.${ext}`;
+          link.href = downloadBtn.getAttribute('data-href');
+          link.click();
+
+          downloadBtn.innerHTML = 'Downloaded!';
+          showToast('Image downloaded successfully.');
+          setTimeout(() => {
+            downloadBtn.innerHTML = originalHTML;
+            downloadBtn.disabled = false;
+          }, 2500);
+        }
+      }, 1000);
+    });
+
+    resetBtn.addEventListener('click', () => {
+      uploadArea.style.display = 'block';
+      editorArea.style.display = 'none';
+      fileInput.value = '';
+      rotationAngle = 0;
+      imagePreview.src = '';
+    });
+  </script>
+
+    
+    <section class="tools-hub no-print" aria-label="More Browser Utilities">
+      <h2 class="section-title">All Free Tools on FreeInvoice.store</h2>
+      <p class="section-subtitle">Fast, client-side utilities that run directly in your browser without uploading files to any server.</p>
+      <div class="grid-3">
+        <a href="index.html" class="tool-card">
+          <div>
+            <h3>Invoice Generator &amp; Signature Pad</h3>
+            <p>Create, sign, print, and download A4 invoices in USD, PKR, EUR, and GBP with automatic tax and discount calculations.</p>
+          </div>
+          <span class="tool-card-link">Open Invoice Tool &rarr;</span>
+        </a>
+        <a href="image-reducer.html" class="tool-card">
+          <div>
+            <h3>Image Reducer &amp; Resizer (KB)</h3>
+            <p>Compress photos to 50KB or 200KB, resize pixel dimensions, rotate images, or increase file size in JPG, PNG, and WebP.</p>
+          </div>
+          <span class="tool-card-link">Open Image Reducer &rarr;</span>
+        </a>
+        <a href="word-counter.html" class="tool-card">
+          <div>
+            <h3>Word &amp; Character Counter</h3>
+            <p>Count words, characters, sentences, reading time, and live SEO keyword density, or convert text case in one click.</p>
+          </div>
+          <span class="tool-card-link">Open Word Counter &rarr;</span>
+        </a>
+        <a href="age-calculator.html" class="tool-card">
+          <div>
+            <h3>Exact Age Calculator</h3>
+            <p>Calculate exact age in years, months, days, weeks, and hours from your Date of Birth for official forms and exams.</p>
+          </div>
+          <span class="tool-card-link">Open Age Calculator &rarr;</span>
+        </a>
+        <a href="percentage-calculator.html" class="tool-card">
+          <div>
+            <h3>Percentage &amp; GST Calculator</h3>
+            <p>Compute inclusive and exclusive GST/sales tax, retail discounts, exam marks percentages, and percentage change.</p>
+          </div>
+          <span class="tool-card-link">Open Tax &amp; % Calculator &rarr;</span>
+        </a>
+        <a href="qr-code-generator.html" class="tool-card">
+          <div>
+            <h3>QR Code Generator</h3>
+            <p>Create permanent, custom-colored QR codes for website links, Wi-Fi access, WhatsApp, and invoice payments.</p>
+          </div>
+          <span class="tool-card-link">Open QR Generator &rarr;</span>
+        </a>
+        <a href="password-generator.html" class="tool-card">
+          <div>
+            <h3>Secure Password Generator</h3>
+            <p>Generate strong, hardware-random passwords locally in your browser with custom length and entropy scoring.</p>
+          </div>
+          <span class="tool-card-link">Open Password Tool &rarr;</span>
+        </a>
+      </div>
+    </section>
+    
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer no-print">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><rect width="48" height="48" rx="10" fill="#0f766e"/><path d="M14 12h14l6 6v18a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="#ffffff"/><path d="M28 12v6h6" stroke="#0f766e" stroke-width="2" stroke-linejoin="round"/><line x1="17" y1="22" x2="27" y2="22" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="27" x2="30" y2="27" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="32" x2="23" y2="32" stroke="#0d9488" stroke-width="2.2" stroke-linecap="round"/></svg>
+            <span>FreeInvoice.store</span>
+          </div>
+          <p style="font-size:13.5px;line-height:1.65;margin-bottom:14px;">
+            Professional browser-based tools for invoicing, image compression in KB, text analysis, and daily calculations. Built and maintained by <strong>Muhammad Rameez Tariq</strong>.
+          </p>
+          <p style="font-size:13px;color:#cbd5e1;margin:0;">
+            Email: <a href="mailto:gggrameez93@gmail.com" style="color:#5eead4;font-weight:600;">gggrameez93@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Web Utilities</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Invoice Generator</a></li>
+            <li><a href="image-reducer.html">Image Reducer in KB</a></li>
+            <li><a href="word-counter.html">Word Counter</a></li>
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>More Tools</h4>
+          <ul class="footer-links">
+            <li><a href="percentage-calculator.html">GST &amp; % Calculator</a></li>
+            <li><a href="qr-code-generator.html">QR Code Generator</a></li>
+            <li><a href="password-generator.html">Password Generator</a></li>
+            <li><a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener">Official Blog &#8599;</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company &amp; Legal</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us (Muhammad Rameez Tariq)</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 FreeInvoice.store. Developed by <strong>Muhammad Rameez Tariq</strong>. All rights reserved.</div>
+        <div>100% Client-Side Processing &bull; Mobile Ready</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Bottom Anchor Ad -->
+  <div id="stickyAd" class="sticky-ad no-print">
+    <button type="button" class="sticky-ad-close" onclick="closeStickyAd()" aria-label="Close Ad">&times;</button>
+    <div style="font-size:11.5px;color:#94a3b8;font-weight:500;">
+      Advertisement — Sticky Anchor Slot
+    </div>
+  </div>
+
+  <script src="assets/js/common.js"></script>
+</body>
+</html>
