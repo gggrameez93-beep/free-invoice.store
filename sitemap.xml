@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://freeinvoice.store/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://free-invoice.store/</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://freeinvoice.store/image-reducer.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://free-invoice.store/image-reducer</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://freeinvoice.store/word-counter.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://free-invoice.store/word-counter</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://freeinvoice.store/age-calculator.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://free-invoice.store/age-calculator</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://freeinvoice.store/percentage-calculator.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://free-invoice.store/percentage-calculator</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://freeinvoice.store/qr-code-generator.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://free-invoice.store/qr-code-generator</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://freeinvoice.store/password-generator.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://free-invoice.store/password-generator</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://freeinvoice.store/about.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://free-invoice.store/about</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://freeinvoice.store/contact.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://free-invoice.store/contact</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://freeinvoice.store/privacy-policy.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://free-invoice.store/privacy-policy</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
-    <loc>https://freeinvoice.store/terms.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://free-invoice.store/terms</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
-    <loc>https://freeinvoice.store/disclaimer.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://free-invoice.store/disclaimer</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>

@@ -3,29 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Online Invoice Generator & Digital Signature Maker | FreeInvoice.store</title>
-  <meta name="description" content="Create, sign, download, and print clean A4 invoices online for free. Includes digital signature pad, multi-currency billing, and automatic tax calculation.">
-  <meta name="keywords" content="free invoice generator, online invoice maker, billing software free, digital signature maker, pdf invoice generator, freelance invoice template, freeinvoice.store">
+  <title>Free Online Invoice Generator & PDF Maker | Free-Invoice</title>
+  <meta name="description" content="Create, sign, print, and download professional A4 PDF invoices online for free. Features digital signature pad, multi-currency billing, and 100% privacy.">
+  <meta name="keywords" content="free invoice generator, online invoice maker, pdf invoice generator, digital signature pad, billing software free, free-invoice.store">
   <meta name="author" content="Muhammad Rameez Tariq">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://freeinvoice.store/">
-  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="canonical" href="https://free-invoice.store/" />
+  <link rel="icon" type="image/png" href="logo.png">
 
+  <!-- Open Graph (OG) Tags for WhatsApp, Facebook & LinkedIn -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Free Online Invoice Generator & Digital Signature Maker | FreeInvoice.store">
-  <meta property="og:description" content="Create, sign, download, and print clean A4 invoices online for free. Includes digital signature pad, multi-currency billing, and automatic tax calculation.">
-  <meta property="og:url" content="https://freeinvoice.store/">
-  <meta property="og:site_name" content="FreeInvoice.store">
+  <meta property="og:title" content="Free Online Invoice Generator & PDF Maker | Free-Invoice">
+  <meta property="og:description" content="Create, sign, print, and download professional A4 PDF invoices online for free. Features digital signature pad, multi-currency billing, and 100% privacy.">
+  <meta property="og:url" content="https://free-invoice.store/">
+  <meta property="og:site_name" content="Free-Invoice.store">
+  <meta property="og:image" content="https://free-invoice.store/assets/images/og-preview.webp">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Online Invoice Generator & PDF Maker | Free-Invoice">
+  <meta name="twitter:description" content="Create, sign, print, and download professional A4 PDF invoices online for free. Features digital signature pad, multi-currency billing, and 100% privacy.">
+  <meta name="twitter:image" content="https://free-invoice.store/assets/images/og-preview.webp">
 
   <link rel="stylesheet" href="assets/css/styles.css">
   
   <style>
     .sig-card {
-      background: var(--white);
-      border: 1px solid var(--slate-200);
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
       border-left: 4px solid var(--brand);
       border-radius: var(--radius-md);
-      padding: 18px 20px;
+      padding: 20px;
       margin-bottom: 22px;
     }
     .sig-layout {
@@ -36,7 +44,7 @@
     }
     .sig-canvas {
       border: 1.5px dashed #94a3b8;
-      border-radius: var(--radius-sm);
+      border-radius: var(--radius-xs);
       background: #fafafa;
       cursor: crosshair;
       touch-action: none;
@@ -60,16 +68,16 @@
       gap: 8px;
       align-items: end;
       margin-bottom: 10px;
-      background: var(--slate-50);
+      background: var(--bg-page);
       padding: 10px;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xs);
+      border: 1px solid var(--border-light);
     }
     .item-row .mini-label {
       display: block;
       font-size: 11px;
       font-weight: 600;
-      color: var(--slate-500);
+      color: var(--text-muted);
       margin-bottom: 3px;
     }
 
@@ -78,6 +86,7 @@
       padding: 18px;
       border-radius: var(--radius-md);
       border: 1px solid #cbd5e1;
+      overflow: hidden;
     }
 
     .invoice-paper {
@@ -85,12 +94,11 @@
       color: #0f172a;
       width: 100%;
       max-width: 760px;
-      min-height: 880px;
-      padding: 38px;
+      min-height: 860px;
+      padding: 36px;
       margin: 0 auto;
       border-radius: 2px;
       box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
-      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
       box-sizing: border-box;
     }
 
@@ -177,7 +185,7 @@
       }
       .inv-table th, .inv-table td {
         padding: 8px 6px;
-        font-size: 12.5px;
+        font-size: 12px;
       }
     }
 
@@ -191,7 +199,7 @@
         margin: 0 !important;
         padding: 0 !important;
       }
-      .no-print, .site-header, .page-header, .ad-slot, .sig-card, .editor-card, .seo-article, .tools-hub, .site-footer, .sticky-ad, #globalToast {
+      .no-print, .site-header, .hero-banner, .ad-container, .sig-card, .editor-card, .content-section, .tools-directory, .site-footer, .sticky-ad, #globalToast {
         display: none !important;
       }
       main.container, .invoice-workspace, .preview-container {
@@ -212,74 +220,141 @@
     }
   </style>
 
-  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Online Invoice Generator & PDF Maker",
+  "url": "https://free-invoice.store/",
+  "operatingSystem": "All",
+  "applicationCategory": "BusinessApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Muhammad Rameez Tariq"
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "1. Is Free-Invoice.store completely free for unlimited commercial invoices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can create, sign, print, and download unlimited A4 PDF invoices for personal or commercial business billing with zero watermarks, zero registration, and no subscription fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "2. Why does my downloaded PDF never show a blank white page on mobile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlike basic tools that rely on buggy screen-capture scripts, Free-Invoice.store uses a native high-DPI A4 Canvas-to-PDF engine that renders your exact invoice at 1654x2339 resolution independent of mobile screen size or scroll position."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "3. Will my website URL or page title appear at the top when I print an invoice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Clicking 'Print Clean Invoice' opens an isolated print frame configured with @page { margin: 0mm } and a blank title so browser headers and footers are completely suppressed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "4. Are my bank account details, client names, or uploaded logos stored on your servers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Never. Our invoice generator operates 100% locally inside your web browser using client-side JavaScript. Your financial data never leaves your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5. Which currencies and tax formats are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can switch instantly between USD ($), PKR (Rs), EUR (\u20ac), GBP (\u00a3), AED (\u062f.\u0625), and INR (\u20b9), and apply custom percentage discounts and sales tax rates."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
-  <!-- Header Navigation -->
+  <!-- Sticky Header with Original Logo & Clean Extensionless Links -->
   <header class="site-header no-print">
     <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><rect width="48" height="48" rx="10" fill="#0f766e"/><path d="M14 12h14l6 6v18a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="#ffffff"/><path d="M28 12v6h6" stroke="#0f766e" stroke-width="2" stroke-linejoin="round"/><line x1="17" y1="22" x2="27" y2="22" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="27" x2="30" y2="27" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="32" x2="23" y2="32" stroke="#0d9488" stroke-width="2.2" stroke-linecap="round"/></svg>
-        <span>FreeInvoice<span class="tld">.store</span></span>
+      <a href="/" class="brand-logo" aria-label="Free-Invoice.store Home">
+        <img src="logo.png" alt="Free-Invoice.store Official Logo" width="36" height="36" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+        <svg width="34" height="34" viewBox="0 0 48 48" fill="none" style="display:none;flex-shrink:0;"><rect width="48" height="48" rx="10" fill="#0f766e"/><path d="M14 12h14l6 6v18a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="#fff"/></svg>
+        <span>Free-Invoice<span class="tld">.store</span></span>
       </a>
 
-      <nav class="main-nav" aria-label="Main Navigation">
-        <a href="index.html" class="nav-link active">Invoice Maker</a>
-        <a href="image-reducer.html" class="nav-link">Image Reducer</a>
-        <a href="word-counter.html" class="nav-link">Word Counter</a>
-        <a href="age-calculator.html" class="nav-link">Age Calculator</a>
-        <a href="percentage-calculator.html" class="nav-link">GST &amp; % Calc</a>
-        <a href="qr-code-generator.html" class="nav-link">QR Generator</a>
-        <a href="password-generator.html" class="nav-link">Passwords</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener" class="nav-link blog-link">Blog &#8599;</a>
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="/" class="nav-item active">Invoice Maker</a>
+        <a href="/image-reducer" class="nav-item">Image Reducer</a>
+        <a href="/word-counter" class="nav-item">Word Counter</a>
+        <a href="/age-calculator" class="nav-item">Age Calculator</a>
+        <a href="/percentage-calculator" class="nav-item">GST &amp; % Calc</a>
+        <a href="/qr-code-generator" class="nav-item">QR Generator</a>
+        <a href="/password-generator" class="nav-item">Passwords</a>
+        <a href="/about" class="nav-item">About</a>
+        <a href="/contact" class="nav-item">Contact</a>
+        <a href="https://blog.free-invoice.store" target="_blank" rel="noopener" class="nav-item blog-pill">Blog &#8599;</a>
       </nav>
 
-      <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Menu">
+      <button type="button" class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
 
-    <div id="mobileNav" class="mobile-nav">
-      <a href="index.html" class="nav-link active">Invoice Generator</a>
-      <a href="image-reducer.html" class="nav-link">Image Reducer (KB)</a>
-      <a href="word-counter.html" class="nav-link">Word Counter</a>
-      <a href="age-calculator.html" class="nav-link">Age Calculator</a>
-      <a href="percentage-calculator.html" class="nav-link">GST &amp; % Calculator</a>
-      <a href="qr-code-generator.html" class="nav-link">QR Code Maker</a>
-      <a href="password-generator.html" class="nav-link">Password Generator</a>
-      <a href="about.html" class="nav-link">About Us</a>
-      <a href="contact.html" class="nav-link">Contact Us</a>
-      <a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener" class="nav-link blog-link">Official Blog &#8599;</a>
+    <div id="mobileDrawer" class="mobile-drawer">
+      <a href="/" class="nav-item active">Invoice Generator</a>
+      <a href="/image-reducer" class="nav-item">Image Reducer (KB)</a>
+      <a href="/word-counter" class="nav-item">Word Counter</a>
+      <a href="/age-calculator" class="nav-item">Age Calculator</a>
+      <a href="/percentage-calculator" class="nav-item">GST &amp; % Calculator</a>
+      <a href="/qr-code-generator" class="nav-item">QR Code Generator</a>
+      <a href="/password-generator" class="nav-item">Password Generator</a>
+      <a href="/about" class="nav-item">About Us</a>
+      <a href="/contact" class="nav-item">Contact Us</a>
+      <a href="https://blog.free-invoice.store" target="_blank" rel="noopener" class="nav-item blog-pill">Official Blog &#8599;</a>
     </div>
   </header>
 
-  <!-- Clean Page Header -->
-  <section class="page-header no-print">
-    <div class="container page-header-inner">
-      <span class="eyebrow">Free Client-Side Billing Tool</span>
-      <h1>Free Online Invoice Generator & Signature Maker</h1>
-      <p>Create, sign, and download clean A4 PDF invoices in seconds. Processed 100% locally in your browser with zero watermarks or site headers.</p>
+  <!-- Static HTML Core Hero Banner (Crawlable H1 & Intro Text) -->
+  <section class="hero-banner no-print">
+    <div class="container hero-inner">
+      <span class="hero-tag">100% Client-Side Billing Suite</span>
+      <h1>Free Online Invoice Generator & Digital Signature Maker</h1>
+      <p>Create, sign, print, and download studio-quality A4 PDF invoices in seconds. Runs 100% inside your browser with zero server uploads or watermarks.</p>
     </div>
   </section>
 
   <!-- Top AdSense Slot -->
   <div class="container no-print">
-    <div class="ad-slot" aria-label="Advertisement">
+    <div class="ad-container" aria-label="Advertisement">
       <span>Advertisement — Responsive Leaderboard (728x90)</span>
     </div>
   </div>
 
-  <!-- Main Workspace -->
+  <!-- Main Interactive Tool + Static SEO Content -->
   <main class="container">
     
   <!-- Digital Signature Pad -->
   <div class="sig-card no-print">
     <div style="margin-bottom:10px;">
-      <h2 style="margin:0 0 4px;font-size:16.5px;font-weight:700;color:var(--slate-900);">Digital Signature Pad</h2>
-      <p style="margin:0;font-size:13.5px;color:var(--slate-600);">Draw your signature below with your mouse or touchscreen. Click <strong>Apply Signature to Invoice</strong> to add it to your bill, or download it as a PNG image.</p>
+      <h2 style="margin:0 0 4px;font-size:16.5px;font-weight:700;color:var(--text-primary);">Digital Signature Pad</h2>
+      <p style="margin:0;font-size:13.5px;color:var(--text-muted);">Draw your official signature below using your mouse or touchscreen. Click <strong>Apply Signature to Invoice</strong> to embed it directly on your bill, or download it as a transparent PNG.</p>
     </div>
     <div class="sig-layout">
       <canvas id="sig-canvas" class="sig-canvas" width="360" height="125"></canvas>
@@ -351,9 +426,9 @@ Gulberg III, Lahore</textarea>
 
       <!-- Line Items Section -->
       <div style="margin:16px 0;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:6px;">
           <label class="form-label" style="margin:0;">Invoice Line Items</label>
-          <a href="percentage-calculator.html" style="font-size:12px;font-weight:600;">GST / Discount Calculator &rarr;</a>
+          <a href="/percentage-calculator" style="font-size:12px;font-weight:600;">Need GST / Discount Math? &rarr;</a>
         </div>
         <div id="items-wrapper"></div>
         <button type="button" class="btn btn-outline btn-block" style="margin-top:6px;" onclick="addItem()">+ Add Line Item</button>
@@ -394,7 +469,7 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
       <div class="invoice-paper" id="invoice-preview">
         <div class="inv-header">
           <div>
-            <img id="prev-logo" style="max-height:64px;display:none;margin-bottom:10px;" alt="Company Logo">
+            <img id="prev-logo" style="max-height:64px;display:none;margin-bottom:10px;" alt="Uploaded Company Logo">
             <div id="prev-from" style="font-weight:700;font-size:16px;white-space:pre-line;line-height:1.45;color:#0f172a;">Muhammad Rameez Tariq</div>
           </div>
           <div style="text-align:right;">
@@ -453,7 +528,7 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
             </div>
 
             <div style="margin-top:38px;text-align:center;">
-              <img id="prev-sign" style="max-height:58px;display:none;margin:0 auto 6px auto;" alt="Authorized Signature">
+              <img id="prev-sign" style="max-height:58px;display:none;margin:0 auto 6px auto;" alt="Authorized Digital Signature">
               <div style="border-top:1px solid #334155;display:inline-block;padding-top:5px;width:165px;font-size:12.5px;font-weight:600;color:#475569;">Authorized Signature</div>
             </div>
           </div>
@@ -462,55 +537,7 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
     </div>
   </div>
 
-  <div class="ad-slot no-print">
-    <span>Advertisement — In-Content Banner</span>
-  </div>
-
-  <!-- Comprehensive SEO Guide -->
-  <article class="seo-article no-print">
-    <h2>How to Create a Professional Business Invoice Online for Free</h2>
-    <p>Welcome to <strong>FreeInvoice.store</strong>, a fast, browser-based <strong>free invoice generator</strong> developed by <strong>Muhammad Rameez Tariq</strong>. Whether you are a freelance software engineer, graphic designer, digital agency, or small business owner, sending an accurate, well-formatted invoice helps you get paid faster and keeps your bookkeeping organized.</p>
-
-    <div class="highlight-box">
-      <h4>100% Client-Side Privacy (Zero Server Uploads)</h4>
-      <p style="margin:0;">Unlike cloud accounting platforms that save your client records and bank account IBANs on remote servers, FreeInvoice.store processes your entire invoice locally inside your browser. Your financial figures, company logo, and digital signature never leave your device.</p>
-    </div>
-
-    <h3>Step-by-Step Guide: Creating &amp; Downloading Your PDF Invoice</h3>
-    <ol>
-      <li><strong>Add Your Company Logo:</strong> Upload your business logo in PNG or JPG format. If your logo file is too heavy, you can compress it down to 50KB first using our <a href="image-reducer.html"><strong>Free Image Reducer &amp; Resizer</strong></a>.</li>
-      <li><strong>Select Currency &amp; Dates:</strong> Pick USD ($), PKR (Rs), EUR (€), GBP (£), AED, or INR and set your Invoice Number, Issue Date, and Due Date.</li>
-      <li><strong>List Line Items:</strong> Add each service or product with its quantity and unit rate. Need to check character length for detailed project notes? Try our <a href="word-counter.html"><strong>Online Word Counter</strong></a>, or calculate inclusive/exclusive sales tax on our <a href="percentage-calculator.html"><strong>GST &amp; Percentage Calculator</strong></a>.</li>
-      <li><strong>Sign &amp; Export:</strong> Draw your signature on the pad above, click <strong>Apply Signature to Invoice</strong>, and hit <strong>Download Invoice (PDF)</strong> or <strong>Print Clean Invoice</strong>.</li>
-    </ol>
-
-    <h3>What Every Legal Commercial Invoice Should Include</h3>
-    <ul>
-      <li><strong>Unique Invoice Identifier:</strong> Use sequential numbering (such as <code>INV-001</code>, <code>INV-002</code>) for clean tax filing.</li>
-      <li><strong>Clear Sender &amp; Client Details:</strong> Include full business names, physical addresses, and contact details for both parties.</li>
-      <li><strong>Itemized Services:</strong> Break down deliverables clearly so your client understands exactly what they are paying for.</li>
-      <li><strong>Payment Terms &amp; Bank Details:</strong> Specify your Bank Name, Account Title, and IBAN, or include a payment QR code created with our <a href="qr-code-generator.html"><strong>Free QR Code Generator</strong></a>.</li>
-    </ul>
-
-    <h3>Frequently Asked Questions (FAQs)</h3>
-    <div class="faq-list">
-      <div class="faq-item">
-        <h4>1. Does the printed or downloaded PDF invoice have any website watermark or header?</h4>
-        <p>No. Both our PDF export and Print mode isolate only your invoice sheet and suppress browser headers so your client sees only your company branding.</p>
-      </div>
-      <div class="faq-item">
-        <h4>2. Can I generate and download invoices on my Android or iPhone?</h4>
-        <p>Yes! The editor and live preview are mobile-responsive, and our native A4 PDF engine generates a full-resolution A4 invoice on any smartphone without blank pages.</p>
-      </div>
-      <div class="faq-item">
-        <h4>3. Is FreeInvoice.store completely free for commercial use?</h4>
-        <p>Yes, you can generate and download unlimited invoices without sign-ups, subscriptions, or hidden charges.</p>
-      </div>
-    </div>
-  </article>
-
   <script>
-    // === SIGNATURE PAD LOGIC ===
     const canvas = document.getElementById('sig-canvas');
     const ctx = canvas.getContext('2d');
     let isDrawing = false;
@@ -573,7 +600,6 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
       showToast('Signature added to invoice.');
     }
 
-    // === INVOICE GENERATOR LOGIC ===
     const today = new Date();
     const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
     document.getElementById('input-date').valueAsDate = today;
@@ -680,9 +706,6 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
       showToast('Sample invoice restored.');
     }
 
-    // =========================================================================
-    // NATIVE A4 CANVAS-TO-PDF ENGINE (ZERO WHITE PAGE BUG ON MOBILE OR DESKTOP)
-    // =========================================================================
     function renderInvoiceToA4Canvas() {
       const W = 1654;
       const H = 2339;
@@ -691,14 +714,12 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
       c.height = H;
       const g = c.getContext('2d');
 
-      // 1. Pure White A4 Paper Background
       g.fillStyle = '#ffffff';
       g.fillRect(0, 0, W, H);
 
       const pad = 110;
       let y = pad;
 
-      // 2. Logo (if uploaded) & Sender Info (Left)
       const logoImg = document.getElementById('prev-logo');
       if (logoImg && logoImg.style.display !== 'none' && logoImg.src && logoImg.naturalWidth > 0) {
         const maxH = 110;
@@ -708,7 +729,6 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
         y += maxH + 22;
       }
 
-      // INVOICE Heading & Invoice Number (Right)
       g.fillStyle = '#0f172a';
       g.font = '800 58px Inter, Arial, sans-serif';
       g.textAlign = 'right';
@@ -719,24 +739,17 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
       g.font = '700 30px Inter, Arial, sans-serif';
       g.fillText(invNum, W - pad, pad + 98);
 
-      // Sender lines (Left)
       g.textAlign = 'left';
       const fromLines = (document.getElementById('input-from').value || '').split('\n');
       fromLines.forEach((line, idx) => {
-        if (idx === 0) {
-          g.font = '700 31px Inter, Arial, sans-serif';
-          g.fillStyle = '#0f172a';
-        } else {
-          g.font = '500 25px Inter, Arial, sans-serif';
-          g.fillStyle = '#334155';
-        }
+        g.font = idx === 0 ? '700 31px Inter, Arial, sans-serif' : '500 25px Inter, Arial, sans-serif';
+        g.fillStyle = idx === 0 ? '#0f172a' : '#334155';
         g.fillText(line, pad, y + 30);
         y += 38;
       });
 
       y = Math.max(y + 24, pad + 140);
 
-      // Header Teal Divider Line
       g.strokeStyle = '#0f766e';
       g.lineWidth = 4;
       g.beginPath();
@@ -746,7 +759,6 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
 
       y += 50;
 
-      // 3. Bill To (Left) & Dates (Right)
       const metaStartY = y;
       g.fillStyle = '#64748b';
       g.font = '700 22px Inter, Arial, sans-serif';
@@ -762,7 +774,6 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
         y += 36;
       });
 
-      // Issue Date & Due Date on Right
       const issueTxt = document.getElementById('prev-date').innerText || '';
       const dueTxt = document.getElementById('prev-due').innerText || '';
       g.textAlign = 'right';
@@ -773,7 +784,6 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
 
       y = Math.max(y + 36, metaStartY + 110);
 
-      // 4. Line Items Table Header
       const tableW = W - pad * 2;
       const colQtyX = pad + tableW * 0.58;
       const colRateX = pad + tableW * 0.78;
@@ -794,7 +804,6 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
 
       y += 64;
 
-      // Table Rows
       const curr = document.getElementById('input-curr').value;
       const itemRows = document.querySelectorAll('.item-row');
       let subtotal = 0;
@@ -834,7 +843,6 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
       y += 60;
       const footerTopY = y;
 
-      // 5. Left Column: Payment Details & Notes
       const bankText = document.getElementById('input-bank').value || '';
       if (bankText.trim()) {
         g.textAlign = 'left';
@@ -874,7 +882,6 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
         });
       }
 
-      // 6. Right Column: Totals & Signature
       const discPercent = parseFloat(document.getElementById('input-disc').value) || 0;
       const discAmount = (subtotal * discPercent) / 100;
       const afterDisc = Math.max(0, subtotal - discAmount);
@@ -912,7 +919,6 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
 
       drawTotalLine('Total:', curr + grandTotal.toFixed(2), true, '#0f766e');
 
-      // Authorized Signature Image & Line
       ty += 85;
       const signImg = document.getElementById('prev-sign');
       const sigCenterX = rightColLeft + (W - pad - rightColLeft) / 2;
@@ -937,7 +943,6 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
       return c;
     }
 
-    // Converts a JPEG DataURL directly into a valid single-page A4 PDF binary Blob
     function jpegDataUrlToPdfBlob(jpegDataUrl, imgW, imgH) {
       const base64 = jpegDataUrl.split(',')[1];
       const raw = atob(base64);
@@ -970,23 +975,13 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
       }
 
       pushStr('%PDF-1.4\n');
-
-      startObj(1);
-      pushStr('<< /Type /Catalog /Pages 2 0 R >>\nendobj\n');
-
-      startObj(2);
-      pushStr('<< /Type /Pages /Kids [3 0 R] /Count 1 >>\nendobj\n');
-
-      startObj(3);
-      pushStr('<< /Type /Page /Parent 2 0 R /Resources << /XObject << /Im0 4 0 R >> >> /MediaBox [0 0 ' + pageW + ' ' + pageH + '] /Contents 5 0 R >>\nendobj\n');
-
-      startObj(4);
-      pushStr('<< /Type /XObject /Subtype /Image /Width ' + imgW + ' /Height ' + imgH + ' /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ' + imgBytes.length + ' >>\nstream\n');
+      startObj(1); pushStr('<< /Type /Catalog /Pages 2 0 R >>\nendobj\n');
+      startObj(2); pushStr('<< /Type /Pages /Kids [3 0 R] /Count 1 >>\nendobj\n');
+      startObj(3); pushStr('<< /Type /Page /Parent 2 0 R /Resources << /XObject << /Im0 4 0 R >> >> /MediaBox [0 0 ' + pageW + ' ' + pageH + '] /Contents 5 0 R >>\nendobj\n');
+      startObj(4); pushStr('<< /Type /XObject /Subtype /Image /Width ' + imgW + ' /Height ' + imgH + ' /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ' + imgBytes.length + ' >>\nstream\n');
       pushBytes(imgBytes);
       pushStr('\nendstream\nendobj\n');
-
-      startObj(5);
-      pushStr('<< /Length ' + contentStream.length + ' >>\nstream\n' + contentStream + 'endstream\nendobj\n');
+      startObj(5); pushStr('<< /Length ' + contentStream.length + ' >>\nstream\n' + contentStream + 'endstream\nendobj\n');
 
       const xrefOffset = currentOffset;
       pushStr('xref\n0 6\n0000000000 65535 f \n');
@@ -1018,7 +1013,7 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
         link.click();
         link.remove();
 
-        showToast('Invoice PDF downloaded!');
+        showToast('Invoice PDF downloaded.');
       } catch (err) {
         console.error(err);
         printInvoice();
@@ -1028,9 +1023,6 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
       }
     }
 
-    // =========================================================================
-    // ISOLATED CLEAN PRINT ENGINE (ZERO WEBSITE TITLE OR URL HEADER AT TOP)
-    // =========================================================================
     function printInvoice() {
       const a4Canvas = renderInvoiceToA4Canvas();
       const dataUrl = a4Canvas.toDataURL('image/png');
@@ -1055,129 +1047,221 @@ Payment Terms: Due within 7 days. Thank you for your business!</textarea>
     });
   </script>
 
+
+    <div class="ad-container no-print">
+      <span>Advertisement — In-Article Responsive Slot</span>
+    </div>
+
     
-    <section class="tools-hub no-print" aria-label="More Browser Utilities">
-      <h2 class="section-title">All Free Tools on FreeInvoice.store</h2>
-      <p class="section-subtitle">Fast, client-side utilities that run directly in your browser without uploading files to any server.</p>
-      <div class="grid-3">
-        <a href="index.html" class="tool-card">
-          <div>
-            <h3>Invoice Generator &amp; Signature Pad</h3>
-            <p>Create, sign, print, and download A4 invoices in USD, PKR, EUR, and GBP with automatic tax and discount calculations.</p>
+  <!-- 1. How It Works (Step-by-Step Guide in Static HTML) -->
+  <section class="content-section no-print">
+    <h2>How It Works: Create &amp; Download an Invoice in 4 Simple Steps</h2>
+    <p>Our online billing workspace is engineered so freelancers, consultants, agencies, and shop owners can produce studio-grade A4 invoices without complex accounting software.</p>
+    <div class="grid-4" style="margin-top:18px;">
+      <div class="step-card">
+        <span class="step-num">1</span>
+        <h3>Enter Billing Info</h3>
+        <p>Add your company name, upload your brand logo, and enter your client's billing address, invoice number, and due date.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">2</span>
+        <h3>Add Line Items</h3>
+        <p>List each service or product with quantity and unit price. Subtotal, discount, and tax percentages update in real time.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">3</span>
+        <h3>Sign Digitally</h3>
+        <p>Draw your official signature on the touchscreen/mouse pad and click <strong>Apply Signature</strong> to stamp your invoice.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">4</span>
+        <h3>Export A4 PDF</h3>
+        <p>Click <strong>Download Invoice (PDF)</strong> for an instant high-resolution A4 file or print a clean copy with zero site headers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Key Features (Highlighting 100% Client-Side Privacy) -->
+  <section class="content-section no-print">
+    <h2>Key Features of Free-Invoice.store Billing Suite</h2>
+    <div class="grid-4" style="margin-top:16px;">
+      <div class="feature-badge-card">
+        <h3>100% Client-Side Privacy</h3>
+        <p>No server uploads ever. Your client names, bank IBANs, and revenue totals stay strictly inside your local browser memory.</p>
+      </div>
+      <div class="feature-badge-card">
+        <h3>Native A4 PDF Engine</h3>
+        <p>Generates razor-sharp 200-DPI A4 PDFs directly in JavaScript—eliminating blank pages or mobile scroll clipping issues.</p>
+      </div>
+      <div class="feature-badge-card">
+        <h3>Clean Header-Free Print</h3>
+        <p>Isolated print mode suppresses browser URLs, dates, and website titles so only your branded invoice prints on paper.</p>
+      </div>
+      <div class="feature-badge-card">
+        <h3>Works Offline &amp; Free</h3>
+        <p>Zero sign-up walls, zero watermarks, and multi-currency support (USD, PKR, EUR, GBP, AED, INR) for global billing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Deep 750+ Word Editorial Guide with WebP Image & Contextual Internal Links -->
+  <article class="content-section no-print">
+    <h2>The Complete Guide to Professional Online Invoicing for Freelancers &amp; Small Businesses</h2>
+    <p>Whether you work as an independent software developer, digital marketer, graphic designer, or e-commerce vendor, cash flow is the lifeblood of your business. Delayed payments rarely happen because a client refuses to pay; in most cases, invoices get stuck in corporate accounting queues because they lack clear line-item breakdowns, tax calculations, or standardized payment instructions. At <strong>Free-Invoice.store</strong>, developed by <strong>Muhammad Rameez Tariq</strong>, we built a streamlined <strong>free online invoice generator</strong> that removes every friction point between completing a project and receiving your payment.</p>
+
+    <div style="margin:22px 0;border-radius:10px;overflow:hidden;border:1px solid var(--border-light);">
+      <img src="assets/images/invoice-workflow.webp" alt="Three-step workflow diagram showing online invoice creation, digital signature, and A4 PDF export on Free-Invoice.store" width="900" height="360" loading="lazy" style="width:100%;height:auto;">
+    </div>
+
+    <h3>Why Client-Side Invoicing Is Safer Than Traditional Cloud Accounting</h3>
+    <p>When you use conventional cloud-based billing portals, every invoice you draft—including your client's private contact information, your itemized pricing strategy, and your personal bank account or IBAN—is stored on remote third-party database servers. That creates unnecessary data exposure and locks your historical billing behind monthly subscription paywalls.</p>
+    <p>By contrast, our web application executes <strong>100% client-side inside your web browser</strong>. Every calculation, logo preview, signature stroke, and PDF binary stream is generated locally on your computer or smartphone. Nothing is ever uploaded to an external server. Even if your internet connection drops after opening the page, you can continue drafting, signing, and exporting invoices offline without interruption.</p>
+
+    <h3>How to Optimize Every Element of Your Business Invoice</h3>
+    <ul>
+      <li><strong>High-Resolution Brand Logo:</strong> Adding a crisp company logo at the top left of your invoice increases brand trust. If your original logo PNG or JPEG is several megabytes in size, compress it down to a fast 50KB file before uploading using our <a href="/image-reducer"><strong>Free Image Reducer &amp; Resizer in KB</strong></a>.</li>
+      <li><strong>Clear Item Descriptions &amp; Scope Notes:</strong> Avoid vague one-word labels like "Services." Instead, specify exact deliverables (e.g., "Frontend React UI Development — Sprint 2"). If you are billing for copywriting or translation work, verify your exact word and character counts first with our <a href="/word-counter"><strong>Online Word &amp; Character Counter</strong></a>.</li>
+      <li><strong>Accurate GST, VAT &amp; Discount Breakdown:</strong> Clients appreciate seeing how early-bird discounts and regional sales taxes are calculated. If you need to extract inclusive GST from a fixed project budget before filling out your invoice rows, use our dedicated <a href="/percentage-calculator"><strong>Percentage, Discount &amp; GST Calculator</strong></a>.</li>
+      <li><strong>Verifying Contract Timelines &amp; Due Dates:</strong> Setting a clear Issue Date and Due Date (such as Net 7 or Net 15 days) sets professional expectations. You can also calculate exact calendar intervals between contract milestones on our <a href="/age-calculator"><strong>Exact Date &amp; Age Calculator</strong></a>.</li>
+      <li><strong>Fast Digital Payment Links &amp; Security:</strong> Want clients to pay via mobile banking in one scan? Generate a scannable payment link graphic on our <a href="/qr-code-generator"><strong>Custom QR Code Generator</strong></a>, and protect your online banking portals with high-entropy credentials from our <a href="/password-generator"><strong>Secure Password Generator</strong></a>.</li>
+    </ul>
+  </article>
+
+    
+        <section class="content-section no-print" aria-label="Frequently Asked Questions">
+          <h2>Frequently Asked Questions (FAQs)</h2>
+          <div class="faq-stack">
+            <div class="faq-card"><h3>1. Is Free-Invoice.store completely free for unlimited commercial invoices?</h3><p>Yes. You can create, sign, print, and download unlimited A4 PDF invoices for personal or commercial business billing with zero watermarks, zero registration, and no subscription fees.</p></div>
+<div class="faq-card"><h3>2. Why does my downloaded PDF never show a blank white page on mobile?</h3><p>Unlike basic tools that rely on buggy screen-capture scripts, Free-Invoice.store uses a native high-DPI A4 Canvas-to-PDF engine that renders your exact invoice at 1654x2339 resolution independent of mobile screen size or scroll position.</p></div>
+<div class="faq-card"><h3>3. Will my website URL or page title appear at the top when I print an invoice?</h3><p>No. Clicking 'Print Clean Invoice' opens an isolated print frame configured with @page { margin: 0mm } and a blank title so browser headers and footers are completely suppressed.</p></div>
+<div class="faq-card"><h3>4. Are my bank account details, client names, or uploaded logos stored on your servers?</h3><p>Never. Our invoice generator operates 100% locally inside your web browser using client-side JavaScript. Your financial data never leaves your device.</p></div>
+<div class="faq-card"><h3>5. Which currencies and tax formats are supported?</h3><p>You can switch instantly between USD ($), PKR (Rs), EUR (€), GBP (£), AED (د.إ), and INR (₹), and apply custom percentage discounts and sales tax rates.</p></div>
           </div>
-          <span class="tool-card-link">Open Invoice Tool &rarr;</span>
-        </a>
-        <a href="image-reducer.html" class="tool-card">
+        </section>
+        
+    
+    <section class="tools-directory no-print" aria-label="All Free Browser Utilities">
+      <h2 style="font-size:21px;font-weight:800;color:var(--text-primary);margin:0 0 6px;">Complete Suite of Client-Side Tools on Free-Invoice.store</h2>
+      <p style="margin:0 0 18px;font-size:14.5px;color:var(--text-muted);">Every utility below runs 100% locally in your web browser with zero server uploads and instant execution:</p>
+      <div class="grid-3">
+        <a href="/" class="dir-card">
           <div>
-            <h3>Image Reducer &amp; Resizer (KB)</h3>
+            <h3>AI Invoice Generator &amp; Signature Pad</h3>
+            <p>Create, sign, print, and export professional A4 invoices in USD, PKR, EUR, and GBP with automatic tax and discount math.</p>
+          </div>
+          <span class="dir-link">Launch Invoice Generator &rarr;</span>
+        </a>
+        <a href="/image-reducer" class="dir-card">
+          <div>
+            <h3>Image Reducer &amp; Resizer in KB</h3>
             <p>Compress photos to 50KB or 200KB, resize pixel dimensions, rotate images, or increase file size in JPG, PNG, and WebP.</p>
           </div>
-          <span class="tool-card-link">Open Image Reducer &rarr;</span>
+          <span class="dir-link">Launch Image Reducer &rarr;</span>
         </a>
-        <a href="word-counter.html" class="tool-card">
+        <a href="/word-counter" class="dir-card">
           <div>
-            <h3>Word &amp; Character Counter</h3>
-            <p>Count words, characters, sentences, reading time, and live SEO keyword density, or convert text case in one click.</p>
+            <h3>Word Counter &amp; SEO Text Analyzer</h3>
+            <p>Count words, characters, sentences, reading time, and live keyword density, or convert text case instantly.</p>
           </div>
-          <span class="tool-card-link">Open Word Counter &rarr;</span>
+          <span class="dir-link">Launch Word Counter &rarr;</span>
         </a>
-        <a href="age-calculator.html" class="tool-card">
+        <a href="/age-calculator" class="dir-card">
           <div>
-            <h3>Exact Age Calculator</h3>
-            <p>Calculate exact age in years, months, days, weeks, and hours from your Date of Birth for official forms and exams.</p>
+            <h3>Exact Age Calculator &amp; Countdown</h3>
+            <p>Calculate exact chronological age in years, months, days, weeks, and hours from your Date of Birth for official portals.</p>
           </div>
-          <span class="tool-card-link">Open Age Calculator &rarr;</span>
+          <span class="dir-link">Launch Age Calculator &rarr;</span>
         </a>
-        <a href="percentage-calculator.html" class="tool-card">
+        <a href="/percentage-calculator" class="dir-card">
           <div>
-            <h3>Percentage &amp; GST Calculator</h3>
+            <h3>Percentage, Discount &amp; GST Calculator</h3>
             <p>Compute inclusive and exclusive GST/sales tax, retail discounts, exam marks percentages, and percentage change.</p>
           </div>
-          <span class="tool-card-link">Open Tax &amp; % Calculator &rarr;</span>
+          <span class="dir-link">Launch Tax &amp; % Calculator &rarr;</span>
         </a>
-        <a href="qr-code-generator.html" class="tool-card">
+        <a href="/qr-code-generator" class="dir-card">
           <div>
-            <h3>QR Code Generator</h3>
-            <p>Create permanent, custom-colored QR codes for website links, Wi-Fi access, WhatsApp, and invoice payments.</p>
+            <h3>Custom QR Code Generator</h3>
+            <p>Generate permanent, custom-colored QR codes for URLs, Wi-Fi access, WhatsApp chats, and invoice payment links.</p>
           </div>
-          <span class="tool-card-link">Open QR Generator &rarr;</span>
+          <span class="dir-link">Launch QR Generator &rarr;</span>
         </a>
-        <a href="password-generator.html" class="tool-card">
+        <a href="/password-generator" class="dir-card">
           <div>
             <h3>Secure Password Generator</h3>
-            <p>Generate strong, hardware-random passwords locally in your browser with custom length and entropy scoring.</p>
+            <p>Create hardware-random cryptographic passwords locally in your browser with custom length and entropy analysis.</p>
           </div>
-          <span class="tool-card-link">Open Password Tool &rarr;</span>
+          <span class="dir-link">Launch Password Tool &rarr;</span>
         </a>
       </div>
     </section>
     
   </main>
 
-  <!-- Footer -->
+  <!-- Footer with Clean URLs & Developer Attribution -->
   <footer class="site-footer no-print">
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="footer-brand">
-            <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><rect width="48" height="48" rx="10" fill="#0f766e"/><path d="M14 12h14l6 6v18a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="#ffffff"/><path d="M28 12v6h6" stroke="#0f766e" stroke-width="2" stroke-linejoin="round"/><line x1="17" y1="22" x2="27" y2="22" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="27" x2="30" y2="27" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="32" x2="23" y2="32" stroke="#0d9488" stroke-width="2.2" stroke-linecap="round"/></svg>
-            <span>FreeInvoice.store</span>
+            <img src="logo.png" alt="Free-Invoice.store Logo" width="30" height="30" loading="lazy" onerror="this.style.display='none';">
+            <span>Free-Invoice.store</span>
           </div>
           <p style="font-size:13.5px;line-height:1.65;margin-bottom:14px;">
-            Professional browser-based tools for invoicing, image compression in KB, text analysis, and daily calculations. Built and maintained by <strong>Muhammad Rameez Tariq</strong>.
+            Fast, privacy-first browser utilities for online invoicing, KB image compression, text analysis, and tax calculation. Engineered by <strong>Muhammad Rameez Tariq</strong>.
           </p>
           <p style="font-size:13px;color:#cbd5e1;margin:0;">
-            Email: <a href="mailto:gggrameez93@gmail.com" style="color:#5eead4;font-weight:600;">gggrameez93@gmail.com</a>
+            Support Email: <a href="mailto:gggrameez93@gmail.com" style="color:#5eead4;font-weight:600;">gggrameez93@gmail.com</a>
           </p>
         </div>
 
         <div class="footer-col">
-          <h4>Web Utilities</h4>
+          <h4>Primary Tools</h4>
           <ul class="footer-links">
-            <li><a href="index.html">Invoice Generator</a></li>
-            <li><a href="image-reducer.html">Image Reducer in KB</a></li>
-            <li><a href="word-counter.html">Word Counter</a></li>
-            <li><a href="age-calculator.html">Age Calculator</a></li>
+            <li><a href="/">Free Invoice Generator</a></li>
+            <li><a href="/image-reducer">Image Reducer in KB</a></li>
+            <li><a href="/word-counter">Word &amp; Character Counter</a></li>
+            <li><a href="/age-calculator">Exact Age Calculator</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>More Tools</h4>
+          <h4>Business Utilities</h4>
           <ul class="footer-links">
-            <li><a href="percentage-calculator.html">GST &amp; % Calculator</a></li>
-            <li><a href="qr-code-generator.html">QR Code Generator</a></li>
-            <li><a href="password-generator.html">Password Generator</a></li>
-            <li><a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener">Official Blog &#8599;</a></li>
+            <li><a href="/percentage-calculator">GST &amp; % Calculator</a></li>
+            <li><a href="/qr-code-generator">QR Code Generator</a></li>
+            <li><a href="/password-generator">Password Generator</a></li>
+            <li><a href="https://blog.free-invoice.store" target="_blank" rel="noopener">Official Blog &#8599;</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Company &amp; Legal</h4>
+          <h4>Company &amp; Policies</h4>
           <ul class="footer-links">
-            <li><a href="about.html">About Us (Muhammad Rameez Tariq)</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms &amp; Conditions</a></li>
-            <li><a href="disclaimer.html">Disclaimer</a></li>
+            <li><a href="/about">About Us (Muhammad Rameez Tariq)</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms &amp; Conditions</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 FreeInvoice.store. Developed by <strong>Muhammad Rameez Tariq</strong>. All rights reserved.</div>
-        <div>100% Client-Side Processing &bull; Mobile Ready</div>
+        <div>&copy; 2026 Free-Invoice.store &bull; Developed by <strong>Muhammad Rameez Tariq</strong>. All rights reserved.</div>
+        <div>100% Client-Side Privacy &bull; Clean URLs &bull; Mobile Ready</div>
       </div>
     </div>
   </footer>
 
   <!-- Sticky Bottom Anchor Ad -->
   <div id="stickyAd" class="sticky-ad no-print">
-    <button type="button" class="sticky-ad-close" onclick="closeStickyAd()" aria-label="Close Ad">&times;</button>
+    <button type="button" class="sticky-ad-close" onclick="closeStickyAd()" aria-label="Close Advertisement">&times;</button>
     <div style="font-size:11.5px;color:#94a3b8;font-weight:500;">
       Advertisement — Sticky Anchor Slot
     </div>
   </div>
 
-  <script src="assets/js/common.js"></script>
+  <script defer src="assets/js/common.js"></script>
 </body>
 </html>

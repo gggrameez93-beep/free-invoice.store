@@ -3,89 +3,164 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Online Word Counter, Character Counter & Keyword Density Tool</title>
-  <meta name="description" content="Instant online word counter and character counter with spaces. Check reading time, sentence count, SEO keyword density, and convert text case for free.">
-  <meta name="keywords" content="word counter, character counter, word count checker online, letter counter, sentence counter, keyword density checker, case converter online, freeinvoice.store">
+  <title>Free Online Word Counter & Character Checker | Free-Invoice</title>
+  <meta name="description" content="Count words, characters, sentences, paragraphs, and reading time in real time. Includes live SEO keyword density analyzer and instant text case converter.">
+  <meta name="keywords" content="word counter, character counter, online word count checker, letter counter, keyword density checker, case converter, free-invoice.store">
   <meta name="author" content="Muhammad Rameez Tariq">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://freeinvoice.store/word-counter.html">
-  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="canonical" href="https://free-invoice.store/word-counter" />
+  <link rel="icon" type="image/png" href="logo.png">
 
+  <!-- Open Graph (OG) Tags for WhatsApp, Facebook & LinkedIn -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Free Online Word Counter, Character Counter & Keyword Density Tool">
-  <meta property="og:description" content="Instant online word counter and character counter with spaces. Check reading time, sentence count, SEO keyword density, and convert text case for free.">
-  <meta property="og:url" content="https://freeinvoice.store/word-counter.html">
-  <meta property="og:site_name" content="FreeInvoice.store">
+  <meta property="og:title" content="Free Online Word Counter & Character Checker | Free-Invoice">
+  <meta property="og:description" content="Count words, characters, sentences, paragraphs, and reading time in real time. Includes live SEO keyword density analyzer and instant text case converter.">
+  <meta property="og:url" content="https://free-invoice.store/word-counter">
+  <meta property="og:site_name" content="Free-Invoice.store">
+  <meta property="og:image" content="https://free-invoice.store/assets/images/og-preview.webp">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Online Word Counter & Character Checker | Free-Invoice">
+  <meta name="twitter:description" content="Count words, characters, sentences, paragraphs, and reading time in real time. Includes live SEO keyword density analyzer and instant text case converter.">
+  <meta name="twitter:image" content="https://free-invoice.store/assets/images/og-preview.webp">
 
   <link rel="stylesheet" href="assets/css/styles.css">
   
-  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Online Word Counter & Character Checker",
+  "url": "https://free-invoice.store/word-counter",
+  "operatingSystem": "All",
+  "applicationCategory": "UtilitiesApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Muhammad Rameez Tariq"
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "1. Does this word counter count characters with spaces and without spaces separately?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The top dashboard displays both 'Characters (With Spaces)' and 'Characters (No Spaces)' simultaneously so you can meet any platform's exact specification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "2. How are reading time and speaking time calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Estimated reading time is calculated using the standard silent reading speed of 200 words per minute (wpm), while speaking time uses the average presentation rate of 130 words per minute."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "3. Is my drafted article or confidential text saved on your server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Never. All text analysis, word counting, and case conversion happens 100% locally inside your browser via client-side JavaScript. Your text is never transmitted over the internet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "4. What is the ideal character length for a Google Title Tag and Meta Description?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For optimal display in Google Search results without truncation, keep your Title Tag between 50 and 60 characters and your Meta Description between 150 and 160 characters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5. How does the Case Converter toolbar work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simply paste your text and click UPPERCASE, lowercase, Title Case, Sentence case, or Trim Extra Spaces to reformat your entire document in one click."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
-  <!-- Header Navigation -->
+  <!-- Sticky Header with Original Logo & Clean Extensionless Links -->
   <header class="site-header no-print">
     <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><rect width="48" height="48" rx="10" fill="#0f766e"/><path d="M14 12h14l6 6v18a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="#ffffff"/><path d="M28 12v6h6" stroke="#0f766e" stroke-width="2" stroke-linejoin="round"/><line x1="17" y1="22" x2="27" y2="22" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="27" x2="30" y2="27" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="32" x2="23" y2="32" stroke="#0d9488" stroke-width="2.2" stroke-linecap="round"/></svg>
-        <span>FreeInvoice<span class="tld">.store</span></span>
+      <a href="/" class="brand-logo" aria-label="Free-Invoice.store Home">
+        <img src="logo.png" alt="Free-Invoice.store Official Logo" width="36" height="36" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+        <svg width="34" height="34" viewBox="0 0 48 48" fill="none" style="display:none;flex-shrink:0;"><rect width="48" height="48" rx="10" fill="#0f766e"/><path d="M14 12h14l6 6v18a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="#fff"/></svg>
+        <span>Free-Invoice<span class="tld">.store</span></span>
       </a>
 
-      <nav class="main-nav" aria-label="Main Navigation">
-        <a href="index.html" class="nav-link">Invoice Maker</a>
-        <a href="image-reducer.html" class="nav-link">Image Reducer</a>
-        <a href="word-counter.html" class="nav-link active">Word Counter</a>
-        <a href="age-calculator.html" class="nav-link">Age Calculator</a>
-        <a href="percentage-calculator.html" class="nav-link">GST &amp; % Calc</a>
-        <a href="qr-code-generator.html" class="nav-link">QR Generator</a>
-        <a href="password-generator.html" class="nav-link">Passwords</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener" class="nav-link blog-link">Blog &#8599;</a>
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="/" class="nav-item">Invoice Maker</a>
+        <a href="/image-reducer" class="nav-item">Image Reducer</a>
+        <a href="/word-counter" class="nav-item active">Word Counter</a>
+        <a href="/age-calculator" class="nav-item">Age Calculator</a>
+        <a href="/percentage-calculator" class="nav-item">GST &amp; % Calc</a>
+        <a href="/qr-code-generator" class="nav-item">QR Generator</a>
+        <a href="/password-generator" class="nav-item">Passwords</a>
+        <a href="/about" class="nav-item">About</a>
+        <a href="/contact" class="nav-item">Contact</a>
+        <a href="https://blog.free-invoice.store" target="_blank" rel="noopener" class="nav-item blog-pill">Blog &#8599;</a>
       </nav>
 
-      <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Menu">
+      <button type="button" class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
 
-    <div id="mobileNav" class="mobile-nav">
-      <a href="index.html" class="nav-link">Invoice Generator</a>
-      <a href="image-reducer.html" class="nav-link">Image Reducer (KB)</a>
-      <a href="word-counter.html" class="nav-link active">Word Counter</a>
-      <a href="age-calculator.html" class="nav-link">Age Calculator</a>
-      <a href="percentage-calculator.html" class="nav-link">GST &amp; % Calculator</a>
-      <a href="qr-code-generator.html" class="nav-link">QR Code Maker</a>
-      <a href="password-generator.html" class="nav-link">Password Generator</a>
-      <a href="about.html" class="nav-link">About Us</a>
-      <a href="contact.html" class="nav-link">Contact Us</a>
-      <a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener" class="nav-link blog-link">Official Blog &#8599;</a>
+    <div id="mobileDrawer" class="mobile-drawer">
+      <a href="/" class="nav-item">Invoice Generator</a>
+      <a href="/image-reducer" class="nav-item">Image Reducer (KB)</a>
+      <a href="/word-counter" class="nav-item active">Word Counter</a>
+      <a href="/age-calculator" class="nav-item">Age Calculator</a>
+      <a href="/percentage-calculator" class="nav-item">GST &amp; % Calculator</a>
+      <a href="/qr-code-generator" class="nav-item">QR Code Generator</a>
+      <a href="/password-generator" class="nav-item">Password Generator</a>
+      <a href="/about" class="nav-item">About Us</a>
+      <a href="/contact" class="nav-item">Contact Us</a>
+      <a href="https://blog.free-invoice.store" target="_blank" rel="noopener" class="nav-item blog-pill">Official Blog &#8599;</a>
     </div>
   </header>
 
-  <!-- Clean Page Header -->
-  <section class="page-header no-print">
-    <div class="container page-header-inner">
-      <span class="eyebrow">Content & SEO Utility</span>
-      <h1>Free Online Word & Character Counter</h1>
-      <p>Count words, characters, sentences, reading time, and live keyword density as you type.</p>
+  <!-- Static HTML Core Hero Banner (Crawlable H1 & Intro Text) -->
+  <section class="hero-banner no-print">
+    <div class="container hero-inner">
+      <span class="hero-tag">Real-Time Text & SEO Analyzer</span>
+      <h1>Free Online Word Counter, Character Checker & Case Converter</h1>
+      <p>Count words, characters (with and without spaces), sentences, reading time, and live SEO keyword density instantaneously in your browser.</p>
     </div>
   </section>
 
   <!-- Top AdSense Slot -->
   <div class="container no-print">
-    <div class="ad-slot" aria-label="Advertisement">
+    <div class="ad-container" aria-label="Advertisement">
       <span>Advertisement — Responsive Leaderboard (728x90)</span>
     </div>
   </div>
 
-  <!-- Main Workspace -->
+  <!-- Main Interactive Tool + Static SEO Content -->
   <main class="container">
     
-  <div class="grid-4" style="margin-bottom:16px;">
+  <div class="grid-4" style="margin-bottom:14px;">
     <div class="stat-box" style="background:var(--brand-soft);border-color:var(--brand-border);">
-      <div id="wc-words" class="stat-value" style="color:var(--brand);">0</div>
-      <div class="stat-label" style="color:var(--brand);">Words</div>
+      <div id="wc-words" class="stat-value" style="color:var(--brand-dark);">0</div>
+      <div class="stat-label" style="color:var(--brand-dark);">Words</div>
     </div>
     <div class="stat-box">
       <div id="wc-chars" class="stat-value">0</div>
@@ -126,7 +201,7 @@
         <button type="button" class="btn btn-outline" style="padding:6px 11px;font-size:12.5px;" onclick="transformCase('clean')">Trim Extra Spaces</button>
       </div>
 
-      <textarea id="wc-input" class="form-control" rows="12" placeholder="Type or paste your article, essay, blog post, or invoice notes here..." style="font-size:15.5px;line-height:1.65;resize:vertical;" oninput="analyzeText()"></textarea>
+      <textarea id="wc-input" class="form-control" rows="12" placeholder="Type or paste your article, essay, blog post, meta description, or invoice scope notes here..." style="font-size:15.5px;line-height:1.65;resize:vertical;" oninput="analyzeText()"></textarea>
 
       <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-top:12px;">
         <div style="display:flex;gap:8px;">
@@ -139,65 +214,32 @@
 
     <div style="display:flex;flex-direction:column;gap:16px;">
       <div class="card" style="margin-bottom:0;padding:18px;">
-        <h3 style="margin:0 0 12px;font-size:16px;color:var(--slate-900);">SEO &amp; Social Limits</h3>
+        <h2 style="margin:0 0 12px;font-size:16px;color:var(--text-primary);">SEO &amp; Social Character Limits</h2>
         <div style="font-size:13.5px;display:flex;flex-direction:column;gap:8px;">
           <div style="display:flex;justify-content:space-between;">
-            <span>Google Title (Max 60):</span>
+            <span>Google Title Tag (50–60):</span>
             <strong id="limit-title">0 / 60</strong>
           </div>
           <div style="display:flex;justify-content:space-between;">
-            <span>Meta Description (Max 160):</span>
+            <span>Meta Description (150–160):</span>
             <strong id="limit-desc">0 / 160</strong>
           </div>
           <div style="display:flex;justify-content:space-between;">
-            <span>X / Post Limit (Max 280):</span>
+            <span>X / Social Post (Max 280):</span>
             <strong id="limit-tweet">0 / 280</strong>
           </div>
         </div>
       </div>
 
       <div class="card" style="margin-bottom:0;padding:18px;">
-        <h3 style="margin:0 0 8px;font-size:16px;color:var(--slate-900);">Top Keyword Density</h3>
-        <p style="margin:0 0 10px;font-size:12.5px;color:var(--slate-500);">Tracks frequent terms (excluding stop words) for on-page SEO.</p>
-        <div id="keyword-list" style="font-size:13.5px;color:var(--slate-700);">
-          <em style="color:var(--slate-400);">Start typing to see keyword density...</em>
+        <h2 style="margin:0 0 8px;font-size:16px;color:var(--text-primary);">Top Keyword Density</h2>
+        <p style="margin:0 0 10px;font-size:12.5px;color:var(--text-muted);">Tracks frequent terms (excluding stop words) to help you avoid keyword stuffing.</p>
+        <div id="keyword-list" style="font-size:13.5px;color:var(--text-secondary);">
+          <em style="color:var(--text-muted);">Start typing to see live keyword density...</em>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="ad-slot no-print">
-    <span>Advertisement — In-Content Banner</span>
-  </div>
-
-  <article class="seo-article">
-    <h2>Free Online Word Counter, Character Counter &amp; Text Analyzer</h2>
-    <p>Whether you are writing an SEO blog article, preparing a university admission essay, or drafting itemized service descriptions for our <a href="index.html"><strong>Free Online Invoice Generator</strong></a>, tracking exact word and character counts keeps your writing clear and compliant. Our <strong>word counter online</strong> calculates every metric instantaneously in your browser.</p>
-
-    <div class="highlight-box">
-      <h4>Live Keyword Density &amp; Instant Case Conversion</h4>
-      <p style="margin:0;">Alongside counting words and characters, this tool computes live keyword density percentages so content writers can keep primary keywords within the natural 1%–2.5% SEO range, and convert text between UPPERCASE, lowercase, Title Case, and Sentence case in a single click.</p>
-    </div>
-
-    <h3>Why Writers, Students &amp; Marketers Use Our Word Counter</h3>
-    <ul>
-      <li><strong>On-Page SEO &amp; Blogging:</strong> Search engines reward well-structured articles paired with lightweight images compressed on our <a href="image-reducer.html"><strong>Free Image Reducer in KB</strong></a>.</li>
-      <li><strong>Meta Tag Length Verification:</strong> Keep your page titles under 60 characters and meta descriptions under 160 characters so Google never truncates your search snippet.</li>
-      <li><strong>Academic &amp; Job Applications:</strong> Verify strict essay caps right after checking your chronological age on our <a href="age-calculator.html"><strong>Exact Age Calculator</strong></a>.</li>
-    </ul>
-
-    <h3>Frequently Asked Questions (FAQs)</h3>
-    <div class="faq-list">
-      <div class="faq-item">
-        <h4>1. How are reading time and speaking time calculated?</h4>
-        <p>Reading time is based on an average silent reading speed of 200 words per minute, while speaking time uses the standard presentation rate of 130 words per minute.</p>
-      </div>
-      <div class="faq-item">
-        <h4>2. Is my text saved or uploaded anywhere?</h4>
-        <p>No. All text counting and formatting runs locally in your browser memory and is never sent to any external server.</p>
-      </div>
-    </div>
-  </article>
 
   <script>
     const STOP_WORDS = new Set(['the','and','for','that','this','with','you','are','not','from','your','have','more','can','will','about','which','their','has','been','was','were','they','but','all','out','into','who','what','when','where','why','how','our','one','use','using']);
@@ -240,29 +282,26 @@
       const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 7);
       const kwContainer = document.getElementById('keyword-list');
       if (sorted.length === 0) {
-        kwContainer.innerHTML = '<em style="color:var(--slate-400);">Start typing to see keyword density...</em>';
+        kwContainer.innerHTML = '<em style="color:var(--text-muted);">Start typing to see live keyword density...</em>';
       } else {
         kwContainer.innerHTML = sorted.map(([word, count]) => {
           const pct = ((count / wordCount) * 100).toFixed(1);
-          return `<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--slate-100);">
-            <strong style="color:var(--slate-900);">${word}</strong>
-            <span>${count}x <span style="background:var(--brand-soft);color:var(--brand);padding:1px 6px;border-radius:4px;font-weight:600;font-size:12px;">${pct}%</span></span>
-          </div>`;
+          return '<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--bg-subtle);"><strong style="color:var(--text-primary);">' + word + '</strong><span>' + count + 'x <span style="background:var(--brand-soft);color:var(--brand-dark);padding:1px 6px;border-radius:4px;font-weight:600;font-size:12px;">' + pct + '%</span></span></div>';
         }).join('');
       }
     }
 
     function formatDuration(sec) {
       if (sec === 0) return '0 sec';
-      if (sec < 60) return `${sec} sec`;
+      if (sec < 60) return sec + ' sec';
       const mins = Math.floor(sec / 60);
       const rem = sec % 60;
-      return rem > 0 ? `${mins}m ${rem}s` : `${mins} min`;
+      return rem > 0 ? mins + 'm ' + rem + 's' : mins + ' min';
     }
 
     function updateLimit(id, val, max) {
       const el = document.getElementById(id);
-      el.textContent = `${val} / ${max}`;
+      el.textContent = val + ' / ' + max;
       el.style.color = val > max ? '#dc2626' : '#0f766e';
     }
 
@@ -277,7 +316,7 @@
       else if (mode === 'clean') t = t.replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
       input.value = t;
       analyzeText();
-      showToast('Text updated.');
+      showToast('Text case updated.');
     }
 
     function copyText() {
@@ -293,7 +332,7 @@
       const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
-      link.download = 'word-counter-text.txt';
+      link.download = 'word-counter-document.txt';
       link.click();
       showToast('File downloaded.');
     }
@@ -301,133 +340,217 @@
     function clearText() {
       document.getElementById('wc-input').value = '';
       analyzeText();
-      showToast('Cleared.');
+      showToast('Editor cleared.');
     }
   </script>
 
+
+    <div class="ad-container no-print">
+      <span>Advertisement — In-Article Responsive Slot</span>
+    </div>
+
     
-    <section class="tools-hub no-print" aria-label="More Browser Utilities">
-      <h2 class="section-title">All Free Tools on FreeInvoice.store</h2>
-      <p class="section-subtitle">Fast, client-side utilities that run directly in your browser without uploading files to any server.</p>
-      <div class="grid-3">
-        <a href="index.html" class="tool-card">
-          <div>
-            <h3>Invoice Generator &amp; Signature Pad</h3>
-            <p>Create, sign, print, and download A4 invoices in USD, PKR, EUR, and GBP with automatic tax and discount calculations.</p>
+  <!-- 1. How It Works -->
+  <section class="content-section">
+    <h2>How It Works: Real-Time Word, Character &amp; Keyword Analysis</h2>
+    <p>Our browser-based text analyzer processes every keystroke instantaneously with zero server delay, giving writers, students, and SEO professionals full visibility into their content structure.</p>
+    <div class="grid-4" style="margin-top:18px;">
+      <div class="step-card">
+        <span class="step-num">1</span>
+        <h3>Type or Paste Text</h3>
+        <p>Enter your blog draft, academic essay, meta description, or client scope notes into the main editor above.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">2</span>
+        <h3>Review Live Counts</h3>
+        <p>Check total words, characters with and without spaces, sentence count, paragraph count, and reading time.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">3</span>
+        <h3>Audit SEO Density</h3>
+        <p>Inspect the Top Keyword Density panel on the right to verify that your primary target terms stay between 1% and 2.5%.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">4</span>
+        <h3>Format &amp; Export</h3>
+        <p>Convert text between UPPERCASE, lowercase, Title Case, or Sentence case, then copy or download as a clean <code>.txt</code> file.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Key Features -->
+  <section class="content-section">
+    <h2>Key Features of Free-Invoice.store Word Counter</h2>
+    <div class="grid-4" style="margin-top:16px;">
+      <div class="feature-badge-card">
+        <h3>100% Client-Side Privacy</h3>
+        <p>Your unpublished articles, legal drafts, and confidential client notes never leave your browser—zero server uploads.</p>
+      </div>
+      <div class="feature-badge-card">
+        <h3>SEO Meta Limit Tracker</h3>
+        <p>Built-in character gauges for Google Title Tags (60 chars), Meta Descriptions (160 chars), and social posts (280 chars).</p>
+      </div>
+      <div class="feature-badge-card">
+        <h3>Live Keyword Density</h3>
+        <p>Automatically filters out common English stop words to reveal your true topical keyword frequency percentages.</p>
+      </div>
+      <div class="feature-badge-card">
+        <h3>1-Click Case Converter</h3>
+        <p>Fix accidental caps lock, format headlines into Title Case, or strip extra whitespace and blank lines immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Deep 700+ Word Editorial Guide -->
+  <article class="content-section">
+    <h2>Why Accurate Word Count &amp; Keyword Density Matter for SEO, Copywriting &amp; Academics</h2>
+    <p>Every digital publishing channel enforces strict length boundaries. Search engines truncate title tags and meta descriptions that exceed pixel and character thresholds; university admission portals reject personal statements that cross word caps; and freelance clients often pay copywriters on a per-word basis. Our <strong>free online word counter and character checker</strong> combines precision text counting with on-page SEO diagnostics in a single fast interface.</p>
+
+    <h3>Optimizing Content for Google Search &amp; AdSense Approval</h3>
+    <p>One of the most common mistakes on modern utility websites is publishing "thin content"—pages that contain only a few buttons without substantive explanatory text. Search engine crawlers rely on well-structured headings (<code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>), comprehensive guides (typically 600 to 1,200+ words), and natural keyword distribution to understand what a page is about.</p>
+    <ul>
+      <li><strong>Ideal Blog &amp; Supporting Content Length:</strong> Aim for at least 600–800 words of original, helpful documentation on utility pages, and 1,200–2,000 words on long-form blog posts. Pair your articles with fast WebP visuals compressed on our <a href="/image-reducer"><strong>Free Image Reducer in KB</strong></a>.</li>
+      <li><strong>Preventing Keyword Stuffing:</strong> Repeating a target phrase unnaturally in every sentence can trigger search engine spam filters. Use our <strong>Top Keyword Density</strong> panel to keep your primary keyword frequency around 1% to 2.5%.</li>
+      <li><strong>Freelance Copywriting &amp; Client Billing:</strong> Once you finalize your article's word count here, you can calculate per-word pricing or tax rates on our <a href="/percentage-calculator"><strong>Percentage &amp; GST Calculator</strong></a> and issue a formal PDF bill using our <a href="/"><strong>Free Online Invoice Generator</strong></a>.</li>
+      <li><strong>Academic &amp; Job Portal Submissions:</strong> Preparing for competitive exams or scholarship applications? Verify your essay word count here, check your exact chronological age on our <a href="/age-calculator"><strong>Exact Age Calculator</strong></a>, and resize your passport photo to 50KB on our <a href="/image-reducer"><strong>Image Reducer</strong></a>.</li>
+    </ul>
+  </article>
+
+    
+        <section class="content-section no-print" aria-label="Frequently Asked Questions">
+          <h2>Frequently Asked Questions (FAQs)</h2>
+          <div class="faq-stack">
+            <div class="faq-card"><h3>1. Does this word counter count characters with spaces and without spaces separately?</h3><p>Yes. The top dashboard displays both 'Characters (With Spaces)' and 'Characters (No Spaces)' simultaneously so you can meet any platform's exact specification.</p></div>
+<div class="faq-card"><h3>2. How are reading time and speaking time calculated?</h3><p>Estimated reading time is calculated using the standard silent reading speed of 200 words per minute (wpm), while speaking time uses the average presentation rate of 130 words per minute.</p></div>
+<div class="faq-card"><h3>3. Is my drafted article or confidential text saved on your server?</h3><p>Never. All text analysis, word counting, and case conversion happens 100% locally inside your browser via client-side JavaScript. Your text is never transmitted over the internet.</p></div>
+<div class="faq-card"><h3>4. What is the ideal character length for a Google Title Tag and Meta Description?</h3><p>For optimal display in Google Search results without truncation, keep your Title Tag between 50 and 60 characters and your Meta Description between 150 and 160 characters.</p></div>
+<div class="faq-card"><h3>5. How does the Case Converter toolbar work?</h3><p>Simply paste your text and click UPPERCASE, lowercase, Title Case, Sentence case, or Trim Extra Spaces to reformat your entire document in one click.</p></div>
           </div>
-          <span class="tool-card-link">Open Invoice Tool &rarr;</span>
-        </a>
-        <a href="image-reducer.html" class="tool-card">
+        </section>
+        
+    
+    <section class="tools-directory no-print" aria-label="All Free Browser Utilities">
+      <h2 style="font-size:21px;font-weight:800;color:var(--text-primary);margin:0 0 6px;">Complete Suite of Client-Side Tools on Free-Invoice.store</h2>
+      <p style="margin:0 0 18px;font-size:14.5px;color:var(--text-muted);">Every utility below runs 100% locally in your web browser with zero server uploads and instant execution:</p>
+      <div class="grid-3">
+        <a href="/" class="dir-card">
           <div>
-            <h3>Image Reducer &amp; Resizer (KB)</h3>
+            <h3>AI Invoice Generator &amp; Signature Pad</h3>
+            <p>Create, sign, print, and export professional A4 invoices in USD, PKR, EUR, and GBP with automatic tax and discount math.</p>
+          </div>
+          <span class="dir-link">Launch Invoice Generator &rarr;</span>
+        </a>
+        <a href="/image-reducer" class="dir-card">
+          <div>
+            <h3>Image Reducer &amp; Resizer in KB</h3>
             <p>Compress photos to 50KB or 200KB, resize pixel dimensions, rotate images, or increase file size in JPG, PNG, and WebP.</p>
           </div>
-          <span class="tool-card-link">Open Image Reducer &rarr;</span>
+          <span class="dir-link">Launch Image Reducer &rarr;</span>
         </a>
-        <a href="word-counter.html" class="tool-card">
+        <a href="/word-counter" class="dir-card">
           <div>
-            <h3>Word &amp; Character Counter</h3>
-            <p>Count words, characters, sentences, reading time, and live SEO keyword density, or convert text case in one click.</p>
+            <h3>Word Counter &amp; SEO Text Analyzer</h3>
+            <p>Count words, characters, sentences, reading time, and live keyword density, or convert text case instantly.</p>
           </div>
-          <span class="tool-card-link">Open Word Counter &rarr;</span>
+          <span class="dir-link">Launch Word Counter &rarr;</span>
         </a>
-        <a href="age-calculator.html" class="tool-card">
+        <a href="/age-calculator" class="dir-card">
           <div>
-            <h3>Exact Age Calculator</h3>
-            <p>Calculate exact age in years, months, days, weeks, and hours from your Date of Birth for official forms and exams.</p>
+            <h3>Exact Age Calculator &amp; Countdown</h3>
+            <p>Calculate exact chronological age in years, months, days, weeks, and hours from your Date of Birth for official portals.</p>
           </div>
-          <span class="tool-card-link">Open Age Calculator &rarr;</span>
+          <span class="dir-link">Launch Age Calculator &rarr;</span>
         </a>
-        <a href="percentage-calculator.html" class="tool-card">
+        <a href="/percentage-calculator" class="dir-card">
           <div>
-            <h3>Percentage &amp; GST Calculator</h3>
+            <h3>Percentage, Discount &amp; GST Calculator</h3>
             <p>Compute inclusive and exclusive GST/sales tax, retail discounts, exam marks percentages, and percentage change.</p>
           </div>
-          <span class="tool-card-link">Open Tax &amp; % Calculator &rarr;</span>
+          <span class="dir-link">Launch Tax &amp; % Calculator &rarr;</span>
         </a>
-        <a href="qr-code-generator.html" class="tool-card">
+        <a href="/qr-code-generator" class="dir-card">
           <div>
-            <h3>QR Code Generator</h3>
-            <p>Create permanent, custom-colored QR codes for website links, Wi-Fi access, WhatsApp, and invoice payments.</p>
+            <h3>Custom QR Code Generator</h3>
+            <p>Generate permanent, custom-colored QR codes for URLs, Wi-Fi access, WhatsApp chats, and invoice payment links.</p>
           </div>
-          <span class="tool-card-link">Open QR Generator &rarr;</span>
+          <span class="dir-link">Launch QR Generator &rarr;</span>
         </a>
-        <a href="password-generator.html" class="tool-card">
+        <a href="/password-generator" class="dir-card">
           <div>
             <h3>Secure Password Generator</h3>
-            <p>Generate strong, hardware-random passwords locally in your browser with custom length and entropy scoring.</p>
+            <p>Create hardware-random cryptographic passwords locally in your browser with custom length and entropy analysis.</p>
           </div>
-          <span class="tool-card-link">Open Password Tool &rarr;</span>
+          <span class="dir-link">Launch Password Tool &rarr;</span>
         </a>
       </div>
     </section>
     
   </main>
 
-  <!-- Footer -->
+  <!-- Footer with Clean URLs & Developer Attribution -->
   <footer class="site-footer no-print">
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="footer-brand">
-            <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><rect width="48" height="48" rx="10" fill="#0f766e"/><path d="M14 12h14l6 6v18a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="#ffffff"/><path d="M28 12v6h6" stroke="#0f766e" stroke-width="2" stroke-linejoin="round"/><line x1="17" y1="22" x2="27" y2="22" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="27" x2="30" y2="27" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round"/><line x1="17" y1="32" x2="23" y2="32" stroke="#0d9488" stroke-width="2.2" stroke-linecap="round"/></svg>
-            <span>FreeInvoice.store</span>
+            <img src="logo.png" alt="Free-Invoice.store Logo" width="30" height="30" loading="lazy" onerror="this.style.display='none';">
+            <span>Free-Invoice.store</span>
           </div>
           <p style="font-size:13.5px;line-height:1.65;margin-bottom:14px;">
-            Professional browser-based tools for invoicing, image compression in KB, text analysis, and daily calculations. Built and maintained by <strong>Muhammad Rameez Tariq</strong>.
+            Fast, privacy-first browser utilities for online invoicing, KB image compression, text analysis, and tax calculation. Engineered by <strong>Muhammad Rameez Tariq</strong>.
           </p>
           <p style="font-size:13px;color:#cbd5e1;margin:0;">
-            Email: <a href="mailto:gggrameez93@gmail.com" style="color:#5eead4;font-weight:600;">gggrameez93@gmail.com</a>
+            Support Email: <a href="mailto:gggrameez93@gmail.com" style="color:#5eead4;font-weight:600;">gggrameez93@gmail.com</a>
           </p>
         </div>
 
         <div class="footer-col">
-          <h4>Web Utilities</h4>
+          <h4>Primary Tools</h4>
           <ul class="footer-links">
-            <li><a href="index.html">Invoice Generator</a></li>
-            <li><a href="image-reducer.html">Image Reducer in KB</a></li>
-            <li><a href="word-counter.html">Word Counter</a></li>
-            <li><a href="age-calculator.html">Age Calculator</a></li>
+            <li><a href="/">Free Invoice Generator</a></li>
+            <li><a href="/image-reducer">Image Reducer in KB</a></li>
+            <li><a href="/word-counter">Word &amp; Character Counter</a></li>
+            <li><a href="/age-calculator">Exact Age Calculator</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>More Tools</h4>
+          <h4>Business Utilities</h4>
           <ul class="footer-links">
-            <li><a href="percentage-calculator.html">GST &amp; % Calculator</a></li>
-            <li><a href="qr-code-generator.html">QR Code Generator</a></li>
-            <li><a href="password-generator.html">Password Generator</a></li>
-            <li><a href="https://freeinvoice-blog.blogspot.com" target="_blank" rel="noopener">Official Blog &#8599;</a></li>
+            <li><a href="/percentage-calculator">GST &amp; % Calculator</a></li>
+            <li><a href="/qr-code-generator">QR Code Generator</a></li>
+            <li><a href="/password-generator">Password Generator</a></li>
+            <li><a href="https://blog.free-invoice.store" target="_blank" rel="noopener">Official Blog &#8599;</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Company &amp; Legal</h4>
+          <h4>Company &amp; Policies</h4>
           <ul class="footer-links">
-            <li><a href="about.html">About Us (Muhammad Rameez Tariq)</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms &amp; Conditions</a></li>
-            <li><a href="disclaimer.html">Disclaimer</a></li>
+            <li><a href="/about">About Us (Muhammad Rameez Tariq)</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms &amp; Conditions</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 FreeInvoice.store. Developed by <strong>Muhammad Rameez Tariq</strong>. All rights reserved.</div>
-        <div>100% Client-Side Processing &bull; Mobile Ready</div>
+        <div>&copy; 2026 Free-Invoice.store &bull; Developed by <strong>Muhammad Rameez Tariq</strong>. All rights reserved.</div>
+        <div>100% Client-Side Privacy &bull; Clean URLs &bull; Mobile Ready</div>
       </div>
     </div>
   </footer>
 
   <!-- Sticky Bottom Anchor Ad -->
   <div id="stickyAd" class="sticky-ad no-print">
-    <button type="button" class="sticky-ad-close" onclick="closeStickyAd()" aria-label="Close Ad">&times;</button>
+    <button type="button" class="sticky-ad-close" onclick="closeStickyAd()" aria-label="Close Advertisement">&times;</button>
     <div style="font-size:11.5px;color:#94a3b8;font-weight:500;">
       Advertisement — Sticky Anchor Slot
     </div>
   </div>
 
-  <script src="assets/js/common.js"></script>
+  <script defer src="assets/js/common.js"></script>
 </body>
 </html>
